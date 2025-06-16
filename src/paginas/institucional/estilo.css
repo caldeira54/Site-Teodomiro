@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.contaner{
+    display: flex;
+    justify-content:baseline;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(195, 216, 255);
+    height: 100vh;
+}
+.h1{
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(14, 99, 255);
+    text-align: center;
+}
+.text1{
+    font-size: 20px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.text2{
+     font-size: 25px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
