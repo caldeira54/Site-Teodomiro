@@ -1,3 +1,11 @@
-body{
-    
+.booy{
+  background-color: rgb(0, 0, 0);
+}
+
+  
+header {
+  background-color: #76a3e7;
+  color: #0e0d0d;
+  padding: 60px 0;
+  text-align: center
 }
