@@ -1,13 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-weight: bold;
     color: rgb(255, 255, 255);
+    scroll-behavior: smooth;
 }
-html{
-    height: 100%;
+
+
+:target {
+    scroll-margin-top: .8em;
 }
-body{
+
+body {
     height: 100%;
     background-image: url("https://wallpapers.com/images/hd/lakeview-clear-water-20xeabo4v0doscrj.jpg");
     background-repeat: no-repeat;
@@ -18,12 +22,14 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container_vidro_prof{
-    
+
+.container_vidro_prof {
+
     height: 520px;
     width: 350px;
     padding: 30px 50px;
-    border-radius: 50px;
+    margin: 20px;
+    border-radius: 50px!important;
     background-color: rgba(255, 255, 255, 0.119);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.4);
@@ -39,16 +45,19 @@ body{
     text-align: justify;
     line-height: 185%;
 }
-h1{
+
+h1 {
     margin: 30px;
 }
-.prof{
+
+.prof {
     width: 260px;
     height: 260px;
 
 }
-.nav_pag{
-    position: absolute;
+
+.nav_pag {
+    position: fixed;
     left: 50px;
     top: 250px;
     padding: 30px 50px;
@@ -59,13 +68,19 @@ h1{
     border-left: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.89);
 
-    
+
     display: flex;
     flex-direction: column;
-    justify-content:left;
+    justify-content: left;
     align-items: center;
     font-family: poppins sans-serif;
     font-size: 18px;
     text-align: justify;
     line-height: 185%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
 }
