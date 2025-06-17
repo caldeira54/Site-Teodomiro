@@ -8,24 +8,35 @@
     justify-content:baseline;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(195, 216, 255);
     height: 100vh;
 }
 .h1{
     font-size: 40px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: rgb(14, 99, 255);
     text-align: center;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .text1{
-    font-size: 20px;
+    font-size: 19px;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(0, 0, 0);
-    text-align: center;
+    text-align: justify;  
 }
+
+    
 .text2{
-     font-size: 25px;
+     font-size: 19px;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(0, 0, 0);
     text-align: justify;
 }
+.frase{
+    font-size: 20px;
+    font-family: fantasy;
+}
+.corpo{
+    background-color: rgb(224, 225, 255);
+}
+
+    
