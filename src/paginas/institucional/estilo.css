@@ -1,52 +1,48 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.contaner{
+.contaner {
     display: flex;
-    justify-content:baseline;
+    justify-content: baseline;
     align-items: center;
     flex-direction: column;
     height: 100vh;
 }
-.h1{
+
+.h1 {
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
     color: rgb(14, 99, 255);
     text-align: center;
-     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.text1{
-    font-size: 19px;
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(0, 0, 0);
-    text-align: justify;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-    
-.text2{
-     font-size: 19px;
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.text1 {
+    font-size: 19px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(0, 0, 0);
     text-align: justify;
 }
-.frase{
+
+
+.text2 {
+    font-size: 19px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+
+.frase {
     font-size: 20px;
     font-family: fantasy;
 }
-.corpo{
+
+.corpo {
     background-color: rgb(224, 225, 255);
-    
-  margin-top: 3cm;
-  margin-left: 3cm;
-  margin-right: 2cm;
-  margin-bottom: 2cm;
 }
 
-.nome{
+.nome {
     text-align: end;
 }
-
-
-    
