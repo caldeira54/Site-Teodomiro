@@ -37,6 +37,16 @@
 }
 .corpo{
     background-color: rgb(224, 225, 255);
+    
+  margin-top: 3cm;
+  margin-left: 3cm;
+  margin-right: 2cm;
+  margin-bottom: 2cm;
 }
+
+.nome{
+    text-align: end;
+}
+
 
     
