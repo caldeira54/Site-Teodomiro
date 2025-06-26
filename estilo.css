@@ -14,3 +14,7 @@ nav a {
     color:black;
     
 }
+footer{
+    bottom: 0;
+    position: fixed;
+}
