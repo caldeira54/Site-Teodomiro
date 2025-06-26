@@ -1,0 +1,15 @@
+.body{
+}
+
+.h1{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(17, 19, 22);
+    text-align: center;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.texto{
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 300px;
+}
