@@ -11,6 +11,7 @@
 }
 
 body {
+    background-color: aqua;
     height: 100%;
     background-image: url("https://wallpapers.com/images/hd/lakeview-clear-water-20xeabo4v0doscrj.jpg");
     background-repeat: no-repeat;
@@ -26,28 +27,8 @@ body {
     align-items: center;
 }
 
-.container_vidro_prof {
+ 
 
-    height: 520px;
-    width: 350px;
-    padding: 30px 50px;
-    margin: 20px;
-    border-radius: 50px !important;
-    background-color: rgba(255, 255, 255, 0.119);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.89);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    font-family: poppins sans-serif;
-    font-size: 18px;
-    text-align: justify;
-    line-height: 185%;
-}
 
 h1 {
     margin: 30px;
@@ -56,12 +37,13 @@ h1 {
 
 
 .nav_pag {
+
     position: fixed;
     left: 50px;
     top: 250px;
     padding: 30px 50px;
     border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.119);
+    background-color: rgba(0, 128, 255, 0.106);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.4);
     border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -72,10 +54,47 @@ h1 {
     flex-direction: column;
     justify-content: left;
     align-items: center;
-    font-family: poppins sans-serif;
     font-size: 18px;
     text-align: justify;
     line-height: 185%;
+}
+
+.nav_pag a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav_pag a:hoverbefore {
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.nav_pag a::before {
+    content: '';
+    height: 16px;
+    width: 3px;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    background-color: rgb(18, 1, 255);
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+.nav_pag a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 5px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav_pag a:hover {
+    transform: translateX(-8px);
+    color: rgb(52, 127, 214);
 }
 
 .container {
@@ -89,13 +108,14 @@ h1 {
     margin-top: 100px;
     width: 100%;
     height: 370px;
-    overflow: hidden;
+
 }
+
 
 .item {
 
     position: absolute;
-    width: 400px;
+    width: 420px;
     height: 320px;
     text-align: justify;
     background-color: rgba(255, 255, 255, 0.119);
@@ -104,7 +124,7 @@ h1 {
     border-left: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.89);
     border-radius: 10px;
-    padding: 30px;
+    padding: 24px;
     transition: 0.5s;
     left: calc(50% - 110px);
     top: 0;
@@ -157,4 +177,8 @@ h1 {
 #prev:hover,
 #next:hover {
     opacity: 1;
+}
+.direcao{
+    position: absolute;
+    top: 700px;
 }
