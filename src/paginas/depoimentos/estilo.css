@@ -1,0 +1,13 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.depoimento{
+    width: 45%;
+}
+
+.depoimento p {
+    text-align: justify;
+}
