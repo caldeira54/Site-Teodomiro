@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 nav{
     display: flex;
@@ -15,6 +16,32 @@ nav a {
     
 }
 footer{
+
+    background-color: rgb(52, 127, 214);
+    width: 100%;
+    
     bottom: 0;
     position: fixed;
+
+    
+} 
+.serviços{
+ display: flex;
+ flex-wrap: wrap;
+    
+}
+.sobre_nos{
+    align-items: flex-start;
+    
+}
+ul{list-style: none;}
+.roda_pe{
+    display: flex;
+    justify-content: space-evenly;
+}
+.sobre_nos{
+    width: 15%;
+}
+li{
+    list-style: none;
 }
