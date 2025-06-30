@@ -9,6 +9,8 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    margin: 40px; 
+    padding: 20px; 
 }
 
 .h1 {
@@ -40,9 +42,12 @@
 }
 
 .corpo {
-    background-color: rgb(224, 225, 255);
+    background-color: rgb(229, 229, 229);
 }
 
 .nome {
     text-align: end;
+}
+.h2{
+    color: rgb(0, 7, 131);
 }
