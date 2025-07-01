@@ -1,0 +1,5 @@
+Cor do Texto: Preto
+Cabeçalho e Rodapé: rgb(52,127,214)
+Fundo: rgb(177,202,223)
+Fonte: Arial
+Estilo do Texto: Justificado
