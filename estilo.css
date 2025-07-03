@@ -16,8 +16,14 @@ body {
 }
 
 nav a {
+<<<<<<< HEAD
     text-decoration: none;
     color: rgba(0, 0, 0, 0.801);
+=======
+    text-decoration: none; 
+    color:black;
+    
+>>>>>>> 8917f262230ee6bc065ddac80d139ad78811dc20
 }
 
 .container {
