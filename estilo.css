@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -9,6 +10,8 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     background-color: rgb(52, 127, 214);
+    height: 75px;
+    align-items: center;
 }
 
 body {
@@ -16,14 +19,10 @@ body {
 }
 
 nav a {
-<<<<<<< HEAD
     text-decoration: none;
     color: rgba(0, 0, 0, 0.801);
-=======
-    text-decoration: none; 
     color:black;
-    
->>>>>>> 8917f262230ee6bc065ddac80d139ad78811dc20
+    font-size: 20px;
 }
 
 .container {
@@ -38,7 +37,6 @@ footer {
     background-color: rgb(52, 127, 214);
     width: 100%;
     bottom: 0;
-    position: fixed;
 }
 
 .serviços {
@@ -71,6 +69,8 @@ li {
     /* display: block; */
     height: 879px;
     width: 1800px;
+    display: flex;
+    justify-content: center;
     /* margin: auto; */
     margin-top: 20px;
     position: relative;
@@ -97,7 +97,8 @@ li {
     background-color: #000;
     bottom: 10px;
     cursor: pointer;
-    display: block;
+    display: inline-block;
+    text-align: center;
     height: 10px;
     position: absolute;
     width: 10px;
@@ -117,6 +118,14 @@ li {
     left: 70px;
 }
 
+.slider li:nth-child(4) label{
+    left: 100px;
+}
+.slider li:nth-child(5) label{
+    left: 130px;
+}
+
+
 .slider img {
     opacity: 0;
     visibility: hidden;
@@ -126,4 +135,9 @@ li {
     opacity: 1;
     visibility: visible;
     z-index: 10;
+}
+p{
+    width: 90%;
+    font-size: 20px;
+    text-align: justify;
 }
