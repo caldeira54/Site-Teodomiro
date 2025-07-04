@@ -124,8 +124,6 @@ li {
 .slider li:nth-child(5) label{
     left: 130px;
 }
-
-
 .slider img {
     opacity: 0;
     visibility: hidden;
@@ -141,3 +139,23 @@ p{
     font-size: 20px;
     text-align: justify;
 }
+
+ .button{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.button button{
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+} 
