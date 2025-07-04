@@ -1,33 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="../../../estilo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Sliders com Dados Diferentes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../../estilo.css">
 </head>
 
 <body>
-    <div class="cabecalho"></div>
-
-
-
-
-
-    <div class="nav_pag" id="efeitos">
-        <a href="#">Professor</a>
-        <a href="./#direcao">Direção</a>
-        <a href="#">Supervisão</a>
-        <a href="#">Auxiliar de serviço básico</a>
-        <a href="#">ATB</a>
+  <div class="cabecalho"></div>
+  <div class="container">
+    <div id="slider-root-1">
+      <h3 class="titulo">Professores</h3>
     </div>
+    <div id="slider-root-2">
+
     </div>
-    <script src="java.js"></script>
-    <!-- Impotaçao de componentes -->
-    <script src="../../componentes/cabecalho.js"></script>
-    <script src="../../componentes/nossa_equipe.js"></script>
+    <div id="slider-root-3">
+      <h3 class="titulo">Direção</h3>
+
+    </div>
+    <div id="slider-root-4">
+      <h3 class="titulo">ASB</h3>
+    </div>
+    <div id="slider-root-5">
+      <h3 class="titulo">ATB</h3>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script type="module">
+    import { createSlider } from '../../componentes/sliderComponent.js';
+
+    const profiles1 = [
+      { name: "Wilson", img: "../../imagens/img.jp.jpg", role: "UX Designer" },
+      { name: "André", img: "../../imagens/img.jp.jpg", role: "Front-End Developer" },
+      { name: "Eduardo", img: "../../imagens/img.jp.jpg", role: "Back-End Developer" },
+      { name: "Arthur", img: "../../imagens/img.jp.jpg", role: "professor de informatica" },
+      { name: "Mislene", img: "../../imagens/img.jp.jpg", role: "DevOps Engineer" },
+      { name: "Wilma", img: "../../imagens/img.jp.jpg", role: "Cloud Architect" },
+      { name: "Valcileia", img: "../../imagens/img.jp.jpg", role: "QA Analyst" },
+
+
+
+    ];
+
+    const profiles2 = [
+      { name: "Hugo", img: "../../imagens/img.jp.jpg", role: "iOS Developer" },
+      { name: "Isla", img: "../../imagens/img.jp.jpg", role: "Android Developer" },
+      { name: "Jake", img: "../../imagens/img.jp.jpg", role: "Flutter Dev" },
+      { name: "Kira", img: "../../imagens/img.jp.jpg", role: "React Native Dev" },
+      { name: "Liam", img: "../../imagens/img.jp.jpg", role: "Mobile QA" },
+      { name: "Maya", img: "../../imagens/img.jp.jpg", role: "PM" },
+      { name: "Nico", img: "../../imagens/img.jp.jpg", role: "UI Artist" }
+    ];
+
+    const profiles3 = [
+      { name: "Oscar", img: "../../imagens/img.jp.jpg", role: "Security Analyst" },
+      { name: "Paula", img: "../../imagens/img.jp.jpg", role: "Pentester" },
+      { name: "Quinn", img: "../../imagens/img.jp.jpg", role: "SOC Engineer" },
+      { name: "Rita", img: "../../imagens/img.jp.jpg", role: "Network Admin" },
+      { name: "Sam", img: "../../imagens/img.jp.jpg", role: "Firewall Expert" },
+      { name: "Tina", img: "../../imagens/img.jp.jpg", role: "Linux Admin" },
+      { name: "Ugo", img: "../../imagens/img.jp.jpg", role: "Cyber Risk" }
+    ];
+
+    const profiles4 = [
+      { name: "Victor", img: "../../imagens/img.jp.jpg", role: "Data Scientist" },
+      { name: "Wendy", img: "../../imagens/img.jp.jpg", role: "ML Engineer" },
+      { name: "Xavier", img: "../../imagens/img.jp.jpg", role: "Data Analyst" },
+      { name: "Yara", img: "../../imagens/img.jp.jpg", role: "AI Developer" },
+      { name: "Zane", img: "../../imagens/img.jp.jpg", role: "BI Specialist" },
+      { name: "Alba", img: "../../imagens/img.jp.jpg", role: "ETL Engineer" },
+      { name: "Bruno", img: "../../imagens/img.jp.jpg", role: "NLP Specialist" }
+    ];
+
+    const profiles5 = [
+      { name: "Caio", img: "../../imagens/img.jp.jpg", role: "Professor" },
+      { name: "Duda", img: "../../imagens/img.jp.jpg", role: "Coordenadora" },
+      { name: "Enzo", img: "../../imagens/img.jp.jpg", role: "Orientador" },
+      { name: "Fernanda", img: "../../imagens/img.jp.jpg", role: "Diretora" },
+      { name: "Gustavo", img: "../../imagens/img.jp.jpg", role: "Tutor" },
+      { name: "Helena", img: "../../imagens/img.jp.jpg", role: "Educadora" },
+      { name: "Igor", img: "../../imagens/img.jp.jpg", role: "Especialista" }
+    ];
+
+    createSlider("slider-root-1", profiles1);
+    createSlider("slider-root-2", profiles2);
+    createSlider("slider-root-3", profiles3);
+    createSlider("slider-root-4", profiles4);
+    createSlider("slider-root-5", profiles5);
+  </script>
+  <script src="../../componentes/cabecalho.js"></script>
 
 </body>
 
