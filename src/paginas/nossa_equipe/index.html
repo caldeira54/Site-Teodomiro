@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5 Sliders com Dados Diferentes</title>
+  <title>Nossa Equipe</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="../../../estilo.css">
 </head>
@@ -12,6 +12,7 @@
 <body>
   <div class="cabecalho"></div>
   <div class="container">
+
     <div id="slider-root-1">
       <h3 class="titulo">Professores</h3>
     </div>
@@ -19,16 +20,20 @@
 
     </div>
     <div id="slider-root-3">
-      <h3 class="titulo">Direção</h3>
 
     </div>
     <div id="slider-root-4">
       <h3 class="titulo">ASB</h3>
     </div>
+
     <div id="slider-root-5">
+    </div>
+
+    <div id="slider-root-6">
       <h3 class="titulo">ATB</h3>
     </div>
   </div>
+  <!-- <h3 class="titulo">Direção</h3> -->
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -36,56 +41,63 @@
     import { createSlider } from '../../componentes/sliderComponent.js';
 
     const profiles1 = [
-      { name: "Wilson", img: "../../imagens/img.jp.jpg", role: "UX Designer" },
-      { name: "André", img: "../../imagens/img.jp.jpg", role: "Front-End Developer" },
-      { name: "Eduardo", img: "../../imagens/img.jp.jpg", role: "Back-End Developer" },
-      { name: "Arthur", img: "../../imagens/img.jp.jpg", role: "professor de informatica" },
-      { name: "Mislene", img: "../../imagens/img.jp.jpg", role: "DevOps Engineer" },
-      { name: "Wilma", img: "../../imagens/img.jp.jpg", role: "Cloud Architect" },
-      { name: "Valcileia", img: "../../imagens/img.jp.jpg", role: "QA Analyst" },
-
-
-
+      { name: "IVANETE", img: "../../imagens/img.jp.jpg", role: "Professora de inglês e português" },
+      { name: "KÁTIA", img: "../../imagens/img.jp.jpg", role: "Professora de artes" },
+      { name: "WILMA", img: "../../imagens/img.jp.jpg", role: "Professora de física" },
+      { name: "JOÃO PAULO", img: "../../imagens/img.jp.jpg", role: "Professor de física e química" },
+      { name: "MÁRCIA OLIVEIRA", img: "../../imagens/img.jp.jpg", role: "Professora de português" },
+      { name: "DALVA", img: "../../imagens/img.jp.jpg", role: "Professora de matemática" },
+      { name: "MÁRCIA GOMES", img: "../../imagens/img.jp.jpg", role: "Professora de matemática" },
     ];
 
     const profiles2 = [
-      { name: "Hugo", img: "../../imagens/img.jp.jpg", role: "iOS Developer" },
-      { name: "Isla", img: "../../imagens/img.jp.jpg", role: "Android Developer" },
-      { name: "Jake", img: "../../imagens/img.jp.jpg", role: "Flutter Dev" },
-      { name: "Kira", img: "../../imagens/img.jp.jpg", role: "React Native Dev" },
-      { name: "Liam", img: "../../imagens/img.jp.jpg", role: "Mobile QA" },
-      { name: "Maya", img: "../../imagens/img.jp.jpg", role: "PM" },
-      { name: "Nico", img: "../../imagens/img.jp.jpg", role: "UI Artist" }
+      { name: "VALCILÉIA", img: "../../imagens/img.jp.jpg", role: "Professora de história" },
+      { name: "MISLENE", img: "../../imagens/img.jp.jpg", role: "Professora de português" },
+      { name: "ANDRÉ", img: "../../imagens/img.jp.jpg", role: "Professor de ED. física" },
+      { name: "CLEUZA", img: "../../imagens/img.jp.jpg", role: "Professora fundamental I" },
+      { name: "GILDEIR", img: "../../imagens/img.jp.jpg", role: "Professor de filosofia " },
+      { name: "MARILANE", img: "../../imagens/img.jp.jpg", role: "Professora de geografia" },
+      { name: "SUZANE", img: "../../imagens/img.jp.jpg", role: "Professora de geografia" }
     ];
 
     const profiles3 = [
-      { name: "Oscar", img: "../../imagens/img.jp.jpg", role: "Security Analyst" },
-      { name: "Paula", img: "../../imagens/img.jp.jpg", role: "Pentester" },
-      { name: "Quinn", img: "../../imagens/img.jp.jpg", role: "SOC Engineer" },
-      { name: "Rita", img: "../../imagens/img.jp.jpg", role: "Network Admin" },
-      { name: "Sam", img: "../../imagens/img.jp.jpg", role: "Firewall Expert" },
-      { name: "Tina", img: "../../imagens/img.jp.jpg", role: "Linux Admin" },
-      { name: "Ugo", img: "../../imagens/img.jp.jpg", role: "Cyber Risk" }
+      { name: "EDILAMAR", img: "../../imagens/img.jp.jpg", role: "Professora de história" },
+      { name: "GERALDO WAILSON", img: "../../imagens/img.jp.jpg", role: "Professor português e inglês" },
+      { name: "LUCINEIA", img: "../../imagens/img.jp.jpg", role: "Professora de sociologia" },
+      { name: "DARLAN", img: "../../imagens/img.jp.jpg", role: "Professor de ED. física" },
+      { name: "MARIA GERALDA", img: "../../imagens/img.jp.jpg", role: "Bibliotecaria" },
+      { name: "ARTHUR", img: "../../imagens/funcionarios/arthur.jpg", role: "Professor de informática" },
+      { name: "WILSON", img: "../../imagens/img.jp.jpg", role: "Professor de informática e ED. física" }
     ];
 
     const profiles4 = [
-      { name: "Victor", img: "../../imagens/img.jp.jpg", role: "Data Scientist" },
-      { name: "Wendy", img: "../../imagens/img.jp.jpg", role: "ML Engineer" },
-      { name: "Xavier", img: "../../imagens/img.jp.jpg", role: "Data Analyst" },
-      { name: "Yara", img: "../../imagens/img.jp.jpg", role: "AI Developer" },
-      { name: "Zane", img: "../../imagens/img.jp.jpg", role: "BI Specialist" },
-      { name: "Alba", img: "../../imagens/img.jp.jpg", role: "ETL Engineer" },
-      { name: "Bruno", img: "../../imagens/img.jp.jpg", role: "NLP Specialist" }
+      { name: "IONE", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "RITA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "ZÉ ROSQUINHA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "CLÁUDIA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "JUDITE", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "MARCIANA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "GILDETE", img: "../../imagens/img.jp.jpg", role: "ATB" }
+    ];
+    const profiles6 = [
+      { name: "JOSÉ GILDASIO", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "MARIA APARECIDA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "CLARA MARTINS", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "RITA MONTEIRO", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "UNIFIND" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "UNIFIND" },
+      { name: "UNIFIND'", img: "../../imagens/img.jp.jpg", role: "UNIFIND" }
     ];
 
+
     const profiles5 = [
-      { name: "Caio", img: "../../imagens/img.jp.jpg", role: "Professor" },
-      { name: "Duda", img: "../../imagens/img.jp.jpg", role: "Coordenadora" },
-      { name: "Enzo", img: "../../imagens/img.jp.jpg", role: "Orientador" },
-      { name: "Fernanda", img: "../../imagens/img.jp.jpg", role: "Diretora" },
-      { name: "Gustavo", img: "../../imagens/img.jp.jpg", role: "Tutor" },
-      { name: "Helena", img: "../../imagens/img.jp.jpg", role: "Educadora" },
-      { name: "Igor", img: "../../imagens/img.jp.jpg", role: "Especialista" }
+      { name: "RAIMUNDA", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "MARCILENE", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "SEU NÔ", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" }
     ];
 
     createSlider("slider-root-1", profiles1);
@@ -93,6 +105,7 @@
     createSlider("slider-root-3", profiles3);
     createSlider("slider-root-4", profiles4);
     createSlider("slider-root-5", profiles5);
+    createSlider("slider-root-6", profiles6);
   </script>
   <script src="../../componentes/cabecalho.js"></script>
 
