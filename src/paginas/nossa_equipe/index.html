@@ -12,6 +12,7 @@
 <body>
   <div class="cabecalho"></div>
   <div class="container">
+    
     <div id="slider-root-1">
       <h3 class="titulo">Professores</h3>
     </div>
@@ -19,16 +20,20 @@
 
     </div>
     <div id="slider-root-3">
-      <h3 class="titulo">Direção</h3>
 
     </div>
     <div id="slider-root-4">
       <h3 class="titulo">ASB</h3>
     </div>
+
     <div id="slider-root-5">
+    </div>
+
+    <div id="slider-root-6">
       <h3 class="titulo">ATB</h3>
     </div>
   </div>
+  <!-- <h3 class="titulo">Direção</h3> -->
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -36,56 +41,66 @@
     import { createSlider } from '../../componentes/sliderComponent.js';
 
     const profiles1 = [
-      { name: "Wilson", img: "../../imagens/img.jp.jpg", role: "UX Designer" },
-      { name: "André", img: "../../imagens/img.jp.jpg", role: "Front-End Developer" },
-      { name: "Eduardo", img: "../../imagens/img.jp.jpg", role: "Back-End Developer" },
-      { name: "Arthur", img: "../../imagens/img.jp.jpg", role: "professor de informatica" },
-      { name: "Mislene", img: "../../imagens/img.jp.jpg", role: "DevOps Engineer" },
-      { name: "Wilma", img: "../../imagens/img.jp.jpg", role: "Cloud Architect" },
-      { name: "Valcileia", img: "../../imagens/img.jp.jpg", role: "QA Analyst" },
+      { name: "IVANETE", img: "../../imagens/img.jp.jpg", role: "UX Designer" },
+      { name: "KATIA", img: "../../imagens/img.jp.jpg", role: "Front-End Developer" },
+      { name: "WILMA", img: "../../imagens/img.jp.jpg", role: "Back-End Developer" },
+      { name: "JOAO ANTONIO", img: "../../imagens/img.jp.jpg", role: "professor de informatica" },
+      { name: "MARCIA OLIVEIRA", img: "../../imagens/img.jp.jpg", role: "DevOps Engineer" },
+      { name: "DALVA", img: "../../imagens/img.jp.jpg", role: "Cloud Architect" },
+      { name: "MARCIA GOMES", img: "../../imagens/img.jp.jpg", role: "QA Analyst" },
 
 
 
     ];
 
     const profiles2 = [
-      { name: "Hugo", img: "../../imagens/img.jp.jpg", role: "iOS Developer" },
-      { name: "Isla", img: "../../imagens/img.jp.jpg", role: "Android Developer" },
-      { name: "Jake", img: "../../imagens/img.jp.jpg", role: "Flutter Dev" },
-      { name: "Kira", img: "../../imagens/img.jp.jpg", role: "React Native Dev" },
-      { name: "Liam", img: "../../imagens/img.jp.jpg", role: "Mobile QA" },
-      { name: "Maya", img: "../../imagens/img.jp.jpg", role: "PM" },
-      { name: "Nico", img: "../../imagens/img.jp.jpg", role: "UI Artist" }
+      { name: "VALCILEIA", img: "../../imagens/img.jp.jpg", role: "iOS Developer" },
+      { name: "MISLENE", img: "../../imagens/img.jp.jpg", role: "Android Developer" },
+      { name: "ANDRE", img: "../../imagens/img.jp.jpg", role: "Flutter Dev" },
+      { name: "CLEUZA", img: "../../imagens/img.jp.jpg", role: "React Native Dev" },
+      { name: "GILDEIR", img: "../../imagens/img.jp.jpg", role: "Mobile QA" },
+      { name: "MARILANE", img: "../../imagens/img.jp.jpg", role: "PM" },
+      { name: "SUZANE", img: "../../imagens/img.jp.jpg", role: "UI Artist" }
     ];
 
     const profiles3 = [
-      { name: "Oscar", img: "../../imagens/img.jp.jpg", role: "Security Analyst" },
-      { name: "Paula", img: "../../imagens/img.jp.jpg", role: "Pentester" },
-      { name: "Quinn", img: "../../imagens/img.jp.jpg", role: "SOC Engineer" },
-      { name: "Rita", img: "../../imagens/img.jp.jpg", role: "Network Admin" },
-      { name: "Sam", img: "../../imagens/img.jp.jpg", role: "Firewall Expert" },
-      { name: "Tina", img: "../../imagens/img.jp.jpg", role: "Linux Admin" },
-      { name: "Ugo", img: "../../imagens/img.jp.jpg", role: "Cyber Risk" }
+      { name: "EDILAMAR", img: "../../imagens/img.jp.jpg", role: "Security Analyst" },
+      { name: "GERALDO WAILSON", img: "../../imagens/img.jp.jpg", role: "Pentester" },
+      { name: "LUCINEA", img: "../../imagens/img.jp.jpg", role: "SOC Engineer" },
+      { name: "DARLAN", img: "../../imagens/img.jp.jpg", role: "Network Admin" },
+      { name: "MARIA GERALDA", img: "../../imagens/img.jp.jpg", role: "Firewall Expert" },
+      { name: "ARTHUR", img: "../../imagens/img.jp.jpg", role: "Linux Admin" },
+      { name: "WILSON", img: "../../imagens/img.jp.jpg", role: "Cyber Risk" }
     ];
 
     const profiles4 = [
-      { name: "Victor", img: "../../imagens/img.jp.jpg", role: "Data Scientist" },
-      { name: "Wendy", img: "../../imagens/img.jp.jpg", role: "ML Engineer" },
-      { name: "Xavier", img: "../../imagens/img.jp.jpg", role: "Data Analyst" },
-      { name: "Yara", img: "../../imagens/img.jp.jpg", role: "AI Developer" },
-      { name: "Zane", img: "../../imagens/img.jp.jpg", role: "BI Specialist" },
-      { name: "Alba", img: "../../imagens/img.jp.jpg", role: "ETL Engineer" },
-      { name: "Bruno", img: "../../imagens/img.jp.jpg", role: "NLP Specialist" }
+      { name: "IONE", img: "../../imagens/img.jp.jpg", role: "Data Scientist" },
+      { name: "RITA", img: "../../imagens/img.jp.jpg", role: "ML Engineer" },
+      { name: "ZÉ ROSQUINHA", img: "../../imagens/img.jp.jpg", role: "Data Analyst" },
+      { name: "CLAUDIA", img: "../../imagens/img.jp.jpg", role: "AI Developer" },
+      { name: "JUDITE", img: "../../imagens/img.jp.jpg", role: "BI Specialist" },
+      { name: "MARCIANA", img: "../../imagens/img.jp.jpg", role: "ETL Engineer" },
+      { name: "GILDETE", img: "../../imagens/img.jp.jpg", role: "NLP Specialist" }
+    ];
+    const profiles6 = [
+      { name: "JOSE GILDASIO", img: "../../imagens/img.jp.jpg", role: "Data Scientist" },
+      { name: "MARIA APARECIDA", img: "../../imagens/img.jp.jpg", role: "ML Engineer" },
+      { name: "CLARA MARTINS", img: "../../imagens/img.jp.jpg", role: "Data Analyst" },
+      { name: "RITA MONTEIRO", img: "../../imagens/img.jp.jpg", role: "AI Developer" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "BI Specialist" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ETL Engineer" },
+      { name: "UNIFIND'", img: "../../imagens/img.jp.jpg", role: "NLP Specialist" }
     ];
 
+
     const profiles5 = [
-      { name: "Caio", img: "../../imagens/img.jp.jpg", role: "Professor" },
-      { name: "Duda", img: "../../imagens/img.jp.jpg", role: "Coordenadora" },
-      { name: "Enzo", img: "../../imagens/img.jp.jpg", role: "Orientador" },
-      { name: "Fernanda", img: "../../imagens/img.jp.jpg", role: "Diretora" },
-      { name: "Gustavo", img: "../../imagens/img.jp.jpg", role: "Tutor" },
-      { name: "Helena", img: "../../imagens/img.jp.jpg", role: "Educadora" },
-      { name: "Igor", img: "../../imagens/img.jp.jpg", role: "Especialista" }
+      { name: "RAIMUNDA", img: "../../imagens/img.jp.jpg", role: "Professor" },
+      { name: "MARCILENE", img: "../../imagens/img.jp.jpg", role: "Coordenadora" },
+      { name: "SEU NÔ", img: "../../imagens/img.jp.jpg", role: "Orientador" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "Diretora" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "Tutor" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "Educadora" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "Especialista" }
     ];
 
     createSlider("slider-root-1", profiles1);
@@ -93,6 +108,7 @@
     createSlider("slider-root-3", profiles3);
     createSlider("slider-root-4", profiles4);
     createSlider("slider-root-5", profiles5);
+    createSlider("slider-root-5", profiles6);
   </script>
   <script src="../../componentes/cabecalho.js"></script>
 
