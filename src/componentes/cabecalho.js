@@ -9,7 +9,6 @@ function verificar_componentes() {
     const links = [
         { texto: 'Home', href: '../../../index.html' },
         { texto: 'Depoimentos', href: '../../paginas/depoimentos/index.html' },
-        { texto: 'Galeria', href: '../../paginas/galeria/index.html' },
         { texto: 'Institucional', href: '../../paginas/institucional/index.html' },
         { texto: 'Nossa Equipe', href: '../../paginas/nossa_equipe/index.html' },
         { texto: 'Proposta Pedagógica', href: '../../paginas/proposta_pedagogicas/index.html' },
