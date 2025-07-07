@@ -47,3 +47,72 @@ h1{
         width: 20%;
     }
 }
+.fundamental_2_tempo_integral {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+.ensino_medio_regular {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+.ensino_medio_tempo_integral {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+.carga_horaria {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
+.matricula {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}

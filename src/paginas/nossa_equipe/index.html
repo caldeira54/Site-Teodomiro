@@ -1,33 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="../../../estilo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nossa Equipe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../../estilo.css">
 </head>
 
 <body>
-    <div class="cabecalho"></div>
+  <div class="cabecalho"></div>
+  <div class="container">
 
-
-
-
-
-    <div class="nav_pag" id="efeitos">
-        <a href="#">Professor</a>
-        <a href="./#direcao">Direção</a>
-        <a href="#">Supervisão</a>
-        <a href="#">Auxiliar de serviço básico</a>
-        <a href="#">ATB</a>
+    <div id="slider-root-1">
+      <h3 class="titulo">Professores</h3>
     </div>
+    <div id="slider-root-2">
+
     </div>
-    <script src="java.js"></script>
-    <!-- Impotaçao de componentes -->
-    <script src="../../componentes/cabecalho.js"></script>
-    <script src="../../componentes/nossa_equipe.js"></script>
+    <div id="slider-root-3">
+
+    </div>
+    <div id="slider-root-4">
+      <h3 class="titulo">ASB</h3>
+    </div>
+
+    <div id="slider-root-5">
+    </div>
+
+    <div id="slider-root-6">
+      <h3 class="titulo">ATB</h3>
+    </div>
+  </div>
+  <!-- <h3 class="titulo">Direção</h3> -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script type="module">
+    import { createSlider } from '../../componentes/sliderComponent.js';
+
+    const profiles1 = [
+      { name: "IVANETE", img: "../../imagens/img.jp.jpg", role: "Professora de inglês e português" },
+      { name: "KÁTIA", img: "../../imagens/img.jp.jpg", role: "Professora de artes" },
+      { name: "WILMA", img: "../../imagens/img.jp.jpg", role: "Professora de física" },
+      { name: "JOÃO PAULO", img: "../../imagens/img.jp.jpg", role: "Professor de física e química" },
+      { name: "MÁRCIA OLIVEIRA", img: "../../imagens/img.jp.jpg", role: "Professora de português" },
+      { name: "DALVA", img: "../../imagens/img.jp.jpg", role: "Professora de matemática" },
+      { name: "MÁRCIA GOMES", img: "../../imagens/img.jp.jpg", role: "Professora de matemática" },
+    ];
+
+    const profiles2 = [
+      { name: "VALCILÉIA", img: "../../imagens/img.jp.jpg", role: "Professora de história" },
+      { name: "MISLENE", img: "../../imagens/img.jp.jpg", role: "Professora de português" },
+      { name: "ANDRÉ", img: "../../imagens/img.jp.jpg", role: "Professor de ED. física" },
+      { name: "CLEUZA", img: "../../imagens/img.jp.jpg", role: "Professora fundamental I" },
+      { name: "GILDEIR", img: "../../imagens/img.jp.jpg", role: "Professor de filosofia " },
+      { name: "MARILANE", img: "../../imagens/img.jp.jpg", role: "Professora de geografia" },
+      { name: "SUZANE", img: "../../imagens/img.jp.jpg", role: "Professora de geografia" }
+    ];
+
+    const profiles3 = [
+      { name: "EDILAMAR", img: "../../imagens/img.jp.jpg", role: "Professora de história" },
+      { name: "GERALDO WAILSON", img: "../../imagens/img.jp.jpg", role: "Professor português e inglês" },
+      { name: "LUCINEIA", img: "../../imagens/img.jp.jpg", role: "Professora de sociologia" },
+      { name: "DARLAN", img: "../../imagens/img.jp.jpg", role: "Professor de ED. física" },
+      { name: "MARIA GERALDA", img: "../../imagens/img.jp.jpg", role: "Bibliotecaria" },
+      { name: "ARTHUR", img: "../../imagens/funcionarios/arthur.jpg", role: "Professor de informática" },
+      { name: "WILSON", img: "../../imagens/img.jp.jpg", role: "Professor de informática e ED. física" }
+    ];
+
+    const profiles4 = [
+      { name: "IONE", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "RITA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "ZÉ ROSQUINHA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "CLÁUDIA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "JUDITE", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "MARCIANA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "GILDETE", img: "../../imagens/img.jp.jpg", role: "ATB" }
+    ];
+    const profiles6 = [
+      { name: "JOSÉ GILDASIO", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "MARIA APARECIDA", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "CLARA MARTINS", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "RITA MONTEIRO", img: "../../imagens/img.jp.jpg", role: "ATB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "UNIFIND" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "UNIFIND" },
+      { name: "UNIFIND'", img: "../../imagens/img.jp.jpg", role: "UNIFIND" }
+    ];
+
+
+    const profiles5 = [
+      { name: "RAIMUNDA", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "MARCILENE", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "SEU NÔ", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" },
+      { name: "UNIFIND", img: "../../imagens/img.jp.jpg", role: "ASB" }
+    ];
+
+    createSlider("slider-root-1", profiles1);
+    createSlider("slider-root-2", profiles2);
+    createSlider("slider-root-3", profiles3);
+    createSlider("slider-root-4", profiles4);
+    createSlider("slider-root-5", profiles5);
+    createSlider("slider-root-6", profiles6);
+  </script>
+  <script src="../../componentes/cabecalho.js"></script>
 
 </body>
 
