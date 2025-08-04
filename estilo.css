@@ -211,3 +211,23 @@ p {
     border: none;
 
 }
+.comeco{
+    margin: 100px 0 100px 0;
+    background-color: #184974;
+    padding: 5% 15% 5% 15%;
+}
+
+.teste {
+    display: flex;
+    width: 100%;
+}
+
+.texto {
+    width: 50%;
+    color: #fff;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+}
