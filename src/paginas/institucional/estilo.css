@@ -9,7 +9,6 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    margin: 40px; 
     padding: 20px; 
 }
 
@@ -26,6 +25,7 @@
     font-family:  Arial;
     color: rgb(0, 0, 0);
     text-align: justify;
+     padding: 30px; 
 }
 
 
@@ -33,7 +33,7 @@
     font-size: 19px;
     font-family:  Arial;
     color: rgb(0, 0, 0);
-    text-align: justify;
+     padding: 30px; 
 }
 
 .frase {
@@ -59,4 +59,7 @@
 
 .poet{
     margin-left: 60%;
+}
+.mine{
+    
 }

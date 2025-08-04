@@ -2,7 +2,7 @@
 .h1 {
   font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
-  color: rgb(116, 116, 116);
+  color: rgb(49, 48, 48);
   text-align: left;
   text-shadow: 2px 2px 4px rgb(52, 127, 214);
   height: 200px;
@@ -10,16 +10,12 @@
   right: 600px;
   top: -50px;
 }
-  75%{
-  font-size: 300%;
-  margin-left: 25%;
-  width: 150%;
-}
+ 
 
 .p {
   animation-duration: 3s;
   animation-name: slidein;
-    font-size: 50px;
+  font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
   color: rgb(116, 116, 116);
   text-align: left;
@@ -52,7 +48,11 @@
   position: relative;
   right: 850px;
   top: -90px;
-
+  animation-duration: 3s;
+  animation-name: slidein;
+  text-shadow: 2px 2px 4px rgb(52, 127, 214);
+  height: 200px;
+  text-align: justify;
 }
 
 .container {
@@ -85,7 +85,5 @@ body {
   align-items: center;
 background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
 }
-
-
 
 
