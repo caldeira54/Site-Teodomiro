@@ -41,7 +41,7 @@
  
 
 
-.texto {
+.conteudo {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 25px;
   text-align: left;
@@ -53,6 +53,7 @@
   text-shadow: 2px 2px 4px rgb(52, 127, 214);
   height: 200px;
   text-align: justify;
+  color:rgb(177, 202, 223)
 }
 
 .container {
@@ -61,7 +62,7 @@
   height: 100%;
 }
 
-.teste {
+.modificacao {
   width: 50%;
   align-self: self-end;
   margin-right: 50px;
