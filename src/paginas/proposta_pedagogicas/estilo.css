@@ -10,14 +10,14 @@
   right: 600px;
   top: -50px;
 }
- 
+
 
 .p {
   animation-duration: 3s;
   animation-name: slidein;
   font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
-  color: rgb(116, 116, 116);
+  color: rgb(34, 33, 33);
   text-align: left;
   text-shadow: 2px 2px 4px rgb(52, 127, 214);
   height: 200px;
@@ -25,6 +25,9 @@
   right: 600px;
   top: -50px;
 }
+
+
+
 
 @keyframes slidein {
   from {
@@ -53,7 +56,7 @@
   text-shadow: 2px 2px 4px rgb(52, 127, 214);
   height: 200px;
   text-align: justify;
-  color:rgb(177, 202, 223)
+  color:rgb(53, 54, 54)
 }
 
 .container {
@@ -86,5 +89,6 @@ body {
   align-items: center;
 background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
 }
+
 
 
