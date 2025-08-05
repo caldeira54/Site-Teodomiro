@@ -61,5 +61,8 @@
     margin-left: 60%;
 }
 .mine{
-    
+   width: 60%;            
+  margin: 0 auto;         
+   font-size: 18px;
+      line-height: 1.6;
 }
