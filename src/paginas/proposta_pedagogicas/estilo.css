@@ -79,6 +79,8 @@ img {
   padding: 10px;
   left: 1050px;
   top: 150px;
+  border: 30px solid  rgb(156, 201, 253) ;
+border-radius: 10px;
 }
 
 body {

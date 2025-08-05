@@ -1,7 +1,7 @@
 // Efeito de digitação
-const text = "Bem-vindo à nossa plataforma de cursos!";
+const text = "Bem-vindo à nossa página de cursos!";
 let i = 0;
-const typingSpeed = 80;
+const typingSpeed = 50;
 
 function typeWriter() {
   if (i < text.length) {

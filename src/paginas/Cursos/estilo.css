@@ -5,7 +5,7 @@
 }
 
 body {
-background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
+  background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
   font-family: 'Segoe UI', sans-serif;
   color: white;
   overflow-x: hidden;
@@ -16,7 +16,7 @@ header {
   text-align: center;
   padding: 150px 20px;
   animation: fadeInDown 1s ease-in-out;
-  
+
 
 }
 
@@ -29,10 +29,12 @@ header {
 
 }
 
-p {
+.p {
   margin-top: 10px;
   font-size: 1.2rem;
   color: #ccc;
+  width: 100%;
+  text-align: center;
 }
 
 .courses {
@@ -48,7 +50,7 @@ p {
   padding: 30px;
   border-radius: 15px;
   width: 280px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s, box-shadow 0.3s;
   opacity: 0;
   transform: translateY(50px);
@@ -68,7 +70,7 @@ p {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: transform 0.3s,background 0.3s;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .course-card button:hover {
@@ -78,7 +80,7 @@ p {
 
 .course-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -96,6 +98,7 @@ p {
     opacity: 0;
     transform: translateY(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
