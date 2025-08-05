@@ -15,7 +15,7 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 1;
-    
+
 }
 
 body {
@@ -43,7 +43,8 @@ nav a:hover {
     flex-direction: column;
     width: 100%;
 }
-h1{
+
+h1 {
     margin-bottom: 30px;
 }
 
@@ -52,49 +53,11 @@ footer {
     width: 100%;
     height: 150px;
     bottom: 0;
-    padding: 20px;
-}
-
-footer a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.801);
-    color: black;
-    font-size: 20px;
-    transition: 0.2s ease-in-out;
-}
-
-footer a:hover {
-    padding: 5px;
-    background-color: rgb(85, 147, 219);
-    border-radius: 10%;
-}
-footer img{
-    height: 100px;
-   
-}
-
-.serviços {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.sobre_nos {
-    align-items: flex-start;
-}
-
-ul {
-    list-style: none;
-}
-
-.roda_pe {
+    padding: 10%;
     display: flex;
     justify-content: space-evenly;
-}
 
-.sobre_nos {
-    width: 15%;
 }
-
 li {
     list-style: none;
 }
@@ -201,8 +164,9 @@ p {
 .img {
     width: 100px;
 }
-.saiba-mais{
-    background-color:  rgb(52,127,214);
+
+.saiba-mais {
+    background-color: rgb(52, 127, 214);
     padding: 20px;
     text-decoration: none;
     border-radius: 50%;
@@ -211,7 +175,8 @@ p {
     border: none;
 
 }
-.comeco{
+
+.comeco {
     margin: 100px 0 100px 0;
     background-color: #184974;
     padding: 5% 15% 5% 15%;
@@ -230,4 +195,104 @@ p {
 .botoes {
     display: flex;
     justify-content: space-evenly;
+}
+
+.matricula {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+
+.inscricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #184974;
+    padding: 20px;
+    width: 30%;
+
+    span {
+        font-size: 32px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    a {
+        background-color: #1fca3a;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 18px;
+        margin-top: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.localizacao {
+    background-color: #184974;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: -50px;
+    padding: 50px;
+    width: 100%;
+
+}
+
+.endereco {
+    width: 30%;
+    text-align: left;
+
+    span {
+        color: #fff;
+
+
+    }
+
+    h1 {
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    a {
+        background-color: #1fca3a;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 18px;
+        margin-top: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.sub-menu {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 50%;
+
+    .d {
+        background-color: #085f99;
+        margin: 20px;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .d img{
+        width: 100px;
+        height: 100px;
+    }
+    .d span{
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+    }
 }
