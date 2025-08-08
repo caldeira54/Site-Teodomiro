@@ -2,14 +2,44 @@
 .h1 {
   font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
+  color: rgb(49, 48, 48);
+  text-align: left;
+  text-shadow: 2px 2px 4px rgb(52, 127, 214);
+  height: 200px;
+  position: relative;
+  right: 600px;
+  top: -50px;
+}
+ 
+
+.p {
+  animation-duration: 3s;
+  animation-name: slidein;
+  font-size: 50px;
+  font-family: 'Times New Roman', Times, serif;
   color: rgb(116, 116, 116);
   text-align: left;
   text-shadow: 2px 2px 4px rgb(52, 127, 214);
   height: 200px;
   position: relative;
   right: 600px;
-  top: 50px;
+  top: -50px;
 }
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+ 
+
 
 .texto {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -17,7 +47,12 @@
   text-align: left;
   position: relative;
   right: 850px;
-  top: 10px;
+  top: -90px;
+  animation-duration: 3s;
+  animation-name: slidein;
+  text-shadow: 2px 2px 4px rgb(52, 127, 214);
+  height: 200px;
+  text-align: justify;
 }
 
 .container {
@@ -39,7 +74,7 @@ img {
   margin-left: 100px;
   padding: 10px;
   left: 1050px;
-  top: 90px;
+  top: 150px;
 }
 
 body {
@@ -48,7 +83,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background:  rgb(177, 202,223);
+background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
 }
 
 

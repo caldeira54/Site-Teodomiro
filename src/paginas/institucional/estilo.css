@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 .contaner {
     display: flex;
     justify-content: baseline;
@@ -10,8 +11,12 @@
     flex-direction: column;
     height: 100vh;
     padding: 20px; 
+  animation: typing 1s steps(20, end) forwards;
 }
-
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
 .h1 {
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
