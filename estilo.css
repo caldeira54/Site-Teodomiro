@@ -51,15 +51,65 @@ h1 {
 footer {
     background-color: rgb(52, 127, 214);
     width: 100%;
-    height: 150px;
     bottom: 0;
-    padding: 10%;
+    padding: 1%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
 
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .menu-rodape {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+
+    .menu-rodape a {
+        padding: 5px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .menu-rodape a:hover {
+        padding: 10px;
+        background-color: rgb(85, 147, 219);
+        border-radius: 30%;
+    }
+
+    .sobre {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        color: #fff;
+    }
+
+    .contato {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contato img {
+        height: 50px;
+        width: 50px;
+        padding: 5px;
+    }
 }
+
 li {
     list-style: none;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
 }
 
 .slider {
@@ -72,6 +122,7 @@ li {
     /* margin: auto; */
     margin-top: 20px;
     position: relative;
+    transition: transform 0.5s ease-in-out;
 }
 
 .slider li {
@@ -286,13 +337,142 @@ p {
         padding: 20px;
         text-align: center;
     }
-    .d img{
+
+    .d img {
         width: 100px;
         height: 100px;
     }
-    .d span{
+
+    .d span {
         color: #fff;
         font-weight: bold;
         font-size: 24px;
     }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+.div-slider {
+    width: auto;
+    height: 400px;
+    text-align: center;
+}
+
+.slides-front {
+    padding: 0;
+    width: 980px;
+    height: 370px;
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+.slides-front * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides-front input {
+    display: none;
+}
+
+.slide-container {
+    display: block;
+}
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 980px;
+    height: 370px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out 0.1s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 150px;
+    height: 100%;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity .2s;
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover+.nav label {
+    opacity: 0.5;
+}
+
+.nav label:hover {
+    opacity: 1;
+}
+
+.nav .next {
+    right: 0;
+}
+
+input:checked+.slide-container .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out 0.1s;
+}
+
+input:checked+.slide-container .nav label {
+    display: block;
+}
+
+.nav-dots {
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.nav-dots .nav-dot {
+    top: 375px;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked~.nav-dots label#img-dot-1,
+input#img-2:checked~.nav-dots label#img-dot-2,
+input#img-3:checked~.nav-dots label#img-dot-3,
+input#img-4:checked~.nav-dots label#img-dot-4,
+{
+background: rgba(0, 0, 0, 0.8);
 }

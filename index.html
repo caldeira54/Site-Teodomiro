@@ -22,40 +22,92 @@
         <a href="./src/paginas/cursos/index.html">Cursos </a>
         <a href="./src/paginas/projrto de leitora">Projeto e Leitura</a>
     </nav>
-    <div class="button">
-        <button id="prev">
-            < </button>
-                <button id="next">></button>
-    </div>
-
     <div class="container">
-        <ul class="slider">
-            <li>
-                <input type="radio" id="slide1" name="slide" checked>
-                <label for="slide1"></label>
-                <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg" />
-            </li>
-            <li>
-                <input type="radio" id="slide2" name="slide">
-                <label for="slide2"></label>
-                <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_2.jpg" />
-            </li>
-            <li>
-                <input type="radio" id="slide3" name="slide">
-                <label for="slide3"></label>
-                <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg" />
-            </li>
-            <li>
-                <input type="radio" id="slide4" name="slide">
-                <label for="slide4"></label>
-                <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_2.jpg" />
-            </li>
-            <li>
-                <input type="radio" id="slide5" name="slide">
-                <label for="slide5"></label>
-                <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg" />
-            </li>
-        </ul>
+        <!-- <ul class="slider">
+            <div class="inner">
+                <li class="item active">
+                    <input type="radio" id="slide1" name="slide" checked>
+                    <label for="slide1"></label>
+                    <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg" />
+                </li>
+                <li class="item">
+                    <input type="radio" id="slide2" name="slide">
+                    <label for="slide2"></label>
+                    <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_2.jpg" />
+                </li>
+                <li class="item">
+                    <input type="radio" id="slide3" name="slide">
+                    <label for="slide3"></label>
+                    <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg" />
+                </li>
+                <li class="item">
+                    <input type="radio" id="slide4" name="slide">
+                    <label for="slide4"></label>
+                    <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_2.jpg" />
+                </li>
+                <li class="item">
+                    <input type="radio" id="slide5" name="slide">
+                    <label for="slide5"></label>
+                    <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg" />
+                </li>
+                <button id="prev" onclick="prevSlide()"> ></button>
+                <button id="next" onclick="nextSlide()"><</button>
+            </div>
+        </ul> -->
+        <div class="div-slider">
+            <ul class="slides-front">
+                <input type="radio" name="radio-btn" id="img-1" checked="">
+                <li class="slide-container">
+                    <div class="slide">
+                        <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpgg">
+                    </div>
+                    <div class="nav">
+                        <label for="img-3" class="prev">‹</label>
+                        <label for="img-2" class="next">›</label>
+                    </div>
+                </li>
+
+                <input type="radio" name="radio-btn" id="img-2">
+                <li class="slide-container">
+                    <div class="slide">
+                        <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_2.jpg">
+                    </div>
+                    <div class="nav">
+                        <label for="img-1" class="prev">‹</label>
+                        <label for="img-3" class="next">›</label>
+                    </div>
+                </li>
+
+                <input type="radio" name="radio-btn" id="img-3">
+                <li class="slide-container">
+                    <div class="slide">
+                        <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg">
+                    </div>
+                    <div class="nav">
+                        <label for="img-2" class="prev">‹</label>
+                        <label for="img-4" class="next">›</label>
+                    </div>
+                </li>
+
+                <input type="radio" name="radio-btn" id="img-4">
+                <li class="slide-container">
+                    <div class="slide">
+                        <img src="https://gustavo144p.github.io/site_teodomiro/imagens/escola_1.jpg">
+                    </div>
+                    <div class="nav">
+                        <label for="img-3" class="prev">‹</label>
+                        <label for="img-1" class="next">›</label>
+                    </div>
+                </li>
+
+                <li class="nav-dots">
+                    <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                    <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                    <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                    <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+                </li>
+            </ul>
+        </div>
 
         <div class="comeco">
             <div class="teste">
@@ -147,7 +199,7 @@
     </div>
 
     <footer class="roda_pe">
-        <img class="img" src="src/imagens/logo.png" alt="">
+        <img src="src/imagens/logo.png" alt="">
         <div class="menu-rodape">
             <a href="./index.html">Home</a>
             <a href="./src/paginas/depoimentos/index.html">Depoimentos</a>
@@ -168,9 +220,10 @@
             </p>
         </div>
         <div class="contato">
-            <a href=""><img src="" alt=""></a>
-            <a href=""><img src="" alt=""></a>
+            <a href=""><img src="./src/imagens/instagram.png" alt=""></a>
+            <a href=""><img src="./src/imagens/whatsapp.png" alt=""></a>
         </div>
+        <img src="./src/imagens/copyright.png" alt="">
     </footer>
     <script src="script.js"></script>
     <!-- <script src="src/componentes/cabecalho.js"></script> -->
