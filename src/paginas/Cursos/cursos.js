@@ -20,7 +20,7 @@ const professores = [
     depoimento: "O conhecimento é a ferramenta mais poderosa que você pode ter — e juntos vamos aprender a usá-la para abrir portas e criar oportunidades.",
     corAvatar: "linear-gradient(135deg,#5ac8fa,#8c7bff)",
     iniciais: "AC",
-    foto: "https://caldeira54.github.io/Site-Teodomiro/src/imagens/funcionarios/arthur.jpg"
+    foto: "../../imagens/img arthur.jpeg"
   },
 
   // Professor 2: exemplo complementar (place-holder)
@@ -36,7 +36,8 @@ const professores = [
     habilidades: ["HTML", "CSS", "JavaScript", "Acessibilidade", "UX/UI"],
     depoimento: "Aprender a programar é aprender a resolver problemas do mundo real com criatividade.",
     corAvatar: "linear-gradient(135deg,#2dd4bf,#5ac8fa)",
-    iniciais: "MS"
+    iniciais: "MS",
+    foto: "../../imagens/img.11jp.jpg"
   },
 
   // Professor 3: exemplo complementar (place-holder)
@@ -52,7 +53,8 @@ const professores = [
     habilidades: ["Python", "Java", "Banco de Dados", "Git", "Lógica"],
     depoimento: "Passo a passo, do simples ao avançado: você vai se surpreender com o que consegue construir.",
     corAvatar: "linear-gradient(135deg,#8c7bff,#ff6b6b)",
-    iniciais: "CP"
+    iniciais: "CP",
+    foto: "../../imagens/img.11jp.jpg"
   }
 ];
 
