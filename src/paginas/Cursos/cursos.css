@@ -165,3 +165,17 @@ blockquote{
   .slide{padding:1rem 2.5rem}
   .nav{display:none}
 }
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  overflow: hidden; /* garante que a imagem siga o formato */
+  border: 1px solid #2a375c;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta mantendo proporção */
+}
