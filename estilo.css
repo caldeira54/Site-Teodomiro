@@ -21,6 +21,12 @@ nav {
 body {
     background-color: rgb(177, 202, 223);
 }
+.triple{
+    top: 10px;
+    position: fixed;
+    z-index: 1000;
+    opacity: 0;
+}
 
 nav a {
     text-decoration: none;
