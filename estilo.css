@@ -37,9 +37,10 @@ nav a {
 }
 
 nav a:hover {
-    padding: 20px;
+    /* padding: 20px;
     background-color: rgb(85, 147, 219);
-    border-radius: 30%;
+    border-radius: 30%; */
+    transform: scale(1.1);
 }
 
 .container {
@@ -79,12 +80,14 @@ footer {
         padding: 5px;
         text-decoration: none;
         color: #000;
+        transition: 0.2s ease-in-out;
     }
 
     .menu-rodape a:hover {
-        padding: 10px;
+        /* padding: 10px;
         background-color: rgb(85, 147, 219);
-        border-radius: 30%;
+        border-radius: 30%; */
+        transform: scale(1.1);
     }
 
     .sobre {
