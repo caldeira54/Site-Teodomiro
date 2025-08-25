@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐍 Cobrinha Teodomiro</title>
+<style>
+:root {
+  --bg1:#0b0f1f;
+  --bg2:#071a3c;
+  --floorA:#0f1b2a;
+  --floorB:#132a45;
+  --wall:#1b263b;
+  --wall-border:#4b6d9d;
+  --headA:#00f0ff;
+  --headB:#00bfff;
+  --bodyA:#00c4ff;
+  --bodyB:#0081b6;
+  --food:#ff3b3b;
+  --accent:#00f0ff;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif;}
+body{
+  display:flex; justify-content:center; align-items:flex-start;
+  min-height:100vh; background:linear-gradient(45deg,var(--bg1),var(--bg2));
+  color:#fff; gap:20px; padding:20px; overflow:hidden;
+}
+#gameCol{
+  display:flex; flex-direction:column; align-items:center;
+  backdrop-filter:blur(5px);
+  border-radius:16px;
+  padding:10px;
+  background:rgba(255,255,255,0.05);
+  box-shadow:0 0 40px rgba(0,255,255,0.2);
+}
+h1{
+  font-size:36px;
+  text-shadow:2px 2px 8px rgba(0,0,0,0.5);
+  margin-bottom:12px; text-align:center;
+}
+canvas{
+  border-radius:16px; border:2px solid rgba(255,255,255,0.2);
+  box-shadow:0 8px 20px rgba(0,255,255,0.2);
+  background:linear-gradient(180deg,var(--floorA),var(--floorB));
+  display:block;
+}
+#hud{
+  margin-top:12px; width:500px; max-width:100%;
+  display:flex; justify-content:space-between; align-items:center;
+  font-weight:700; font-size:20px;
+  padding:6px 12px; border-radius:12px;
+  background:rgba(0,0,0,0.3); backdrop-filter:blur(5px);
+  box-shadow:inset 0 0 8px rgba(0,255,255,0.2);
+}
+#vidas .vida{
+  display:inline-block; margin-right:6px; animation:bater 1.2s infinite;
+}
+#vidas .vida:nth-child(2){ animation-delay:.2s }
+#vidas .vida:nth-child(3){ animation-delay:.4s }
+@keyframes bater { 0%,100%{ transform:scale(1); opacity:1 } 50%{ transform:scale(1.2); opacity:.8 } }
+
+#menu{
+  width:320px; min-width:260px; padding:18px; border-radius:16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 40px rgba(0,255,255,0.2);
+  animation:menuAppear 0.8s ease-out;
+}
+@keyframes menuAppear{0%{opacity:0; transform:translateY(-20px)}100%{opacity:1; transform:translateY(0)}}
+#menu h2{ text-align:center; font-size:24px; margin-bottom:12px; color:#00f0ff; text-shadow:1px 1px 6px rgba(0,0,0,0.5);}
+label{display:block;margin:8px 0 4px;font-weight:700;color:#aafaff;}
+select,button{
+  width:100%; padding:10px 12px; border-radius:12px; border:none;
+  background:rgba(0,0,0,0.3); color:#fff; cursor:pointer; font-weight:700;
+  backdrop-filter:blur(5px);
+  transition:all 0.2s ease;
+}
+select:hover,button:hover{ background:rgba(0,0,0,0.5); transform:scale(1.02); }
+button.primary{ background:linear-gradient(180deg,#00f0ff,#00bfff); color:#000; font-weight:800; }
+button.primary:hover{ filter:brightness(1.15); }
+.row{ display:flex; gap:8px; margin-top:8px; }
+.row > *{ flex:1 }
+
+#msg{ margin-top:10px; min-height:20px; color:#ff6b6b; font-size:14px; text-align:center; }
+.hint{ margin-top:8px; font-size:12px; color:#9ad7ff; text-align:center; }
+
+@media(max-width:900px){
+  body{ flex-direction:column; align-items:center;}
+  #hud{ width:100%; }
+  #menu{ width:100%; max-width:420px;}
+}
+</style>
+</head>
+<body>
+
+<div id="gameCol">
+  <h1>🐍 Cobrinha Teodomiro</h1>
+  <canvas id="canvas" width="600" height="600" tabindex="0"></canvas>
+  <div id="hud">
+    <div>Vidas: <span id="vidas"></span></div>
+    <div>Pontos: <span id="pontos">0</span></div>
+  </div>
+</div>
+
+<div id="menu">
+  <h2>Menu</h2>
+  <label for="fase">Fase</label>
+  <select id="fase">
+    <option value="livre">Campo Livre</option>
+    <option value="facil" selected>Labirinto Fácil</option>
+  </select>
+  <label for="dificuldade">Dificuldade</label>
+  <select id="dificuldade">
+    <option value="lento">Lento</option>
+    <option value="medio" selected>Médio</option>
+    <option value="rapido">Rápido</option>
+  </select>
+  <div class="row">
+    <button class="primary" id="btnStart">Começar</button>
+    <button id="btnPause">Pausar</button>
+  </div>
+  <div class="row">
+    <button id="btnReiniciar">Reiniciar</button>
+    <button id="btnVoltar">Voltar</button>
+  </div>
+  <div id="msg"></div>
+  <div class="hint">Setas ou WASD • Clique no canvas para focar</div>
+</div>
+
+<script>
+(()=>{
+const canvas=document.getElementById('canvas');
+const ctx=canvas.getContext('2d');
+const vidasEl=document.getElementById('vidas');
+const pontosEl=document.getElementById('pontos');
+const faseSel=document.getElementById('fase');
+const diffSel=document.getElementById('dificuldade');
+const btnStart=document.getElementById('btnStart');
+const btnPause=document.getElementById('btnPause');
+const btnReiniciar=document.getElementById('btnReiniciar');
+const btnVoltar=document.getElementById('btnVoltar');
+const msgEl=document.getElementById('msg');
+
+const cols=25, rows=25;
+const tile=canvas.width/cols;
+
+let grid=[], snake=[], dir=null, nextDir=null, food=null;
+let score=0, lives=3, speed=120, running=false, paused=false, loop=null;
+
+// Labirinto fácil fixo editável
+const fixedMaze=Array.from({length:rows},()=>Array(cols).fill(false));
+for(let y=0;y<rows;y++){ fixedMaze[y][0]=true; fixedMaze[y][cols-1]=true; }
+for(let x=0;x<cols;x++){ fixedMaze[0][x]=true; fixedMaze[rows-1][x]=true; }
+for(let x=2;x<cols-2;x+=4){ fixedMaze[5][x]=true; fixedMaze[10][x]=true; fixedMaze[15][x]=true; }
+
+function inBounds(x,y){ return x>=0&&x<cols&&y>=0&&y<rows; }
+function setLives(n){ 
+  lives=n; vidasEl.innerHTML='';
+  for(let i=0;i<lives;i++){ const s=document.createElement('span'); s.className='vida'; s.textContent='❤️'; vidasEl.appendChild(s);}
+}
+function info(msg){ msgEl.textContent=msg||''; }
+function findNearestFreeFromCenter(g){ 
+  const cx=Math.floor(cols/2), cy=Math.floor(rows/2); 
+  if(!g[cy][cx]) return {x:cx,y:cy};
+  const vis=Array.from({length:rows},()=>Array(cols).fill(false)); 
+  const q=[{x:cx,y:cy}]; vis[cy][cx]=true; let qi=0; 
+  const steps=[[1,0],[-1,0],[0,1],[0,-1]];
+  while(qi<q.length){ 
+    const n=q[qi++]; 
+    for(const [dx,dy] of steps){ 
+      const nx=n.x+dx, ny=n.y+dy; 
+      if(inBounds(nx,ny)&&!vis[ny][nx]){ 
+        if(!g[ny][nx]) return {x:nx,y:ny}; 
+        vis[ny][nx]=true; q.push({x:nx,y:ny}); 
+      } 
+    } 
+  } 
+  return {x:1,y:1}; 
+}
+function placeFood(){
+  for(let tries=0;tries<4000;tries++){
+    const x=Math.floor(Math.random()*cols), y=Math.floor(Math.random()*rows);
+    if(grid[y][x]) continue; if(snake.some(s=>s.x===x&&s.y===y)) continue;
+    food={x,y}; return;
+  }
+  outer:for(let y=0;y<rows;y++){for(let x=0;x<cols;x++){if(!grid[y][x]&&!snake.some(s=>s.x===x&&s.y===y)){ food={x,y}; break outer; }}}
+}
+
+function buildGridForPhase(phase){ if(phase==='livre') return Array.from({length:rows},()=>Array(cols).fill(false)); if(phase==='facil') return fixedMaze.map(r=>[...r]); }
+
+function startGame(){
+  score=0; pontosEl.textContent=score; setLives(3); paused=false; info('');
+  speed=(diffSel.value==='lento')?200:(diffSel.value==='medio')?120:80;
+  grid=buildGridForPhase(faseSel.value);
+  const start=findNearestFreeFromCenter(grid);
+  snake=[{x:start.x,y:start.y}]; dir=null; nextDir=null;
+  placeFood();
+  if(loop) clearInterval(loop);
+  loop=setInterval(tick,speed); running=true; btnPause.textContent='Pausar';
+  canvas.focus();
+}
+function pauseGame(){ if(!running) return; paused=!paused; btnPause.textContent=paused?'Retomar':'Pausar'; }
+function stopGameToMenu(msg){ running=false; paused=false; if(loop){ clearInterval(loop); loop=null;} info(msg||''); }
+function loseLifeAndReset(){ setLives(Math.max(0,lives-1)); if(lives<=0){ stopGameToMenu(`Game Over! Pontos: ${score}`); return; } const start=findNearestFreeFromCenter(grid); snake=[{x:start.x,y:start.y}]; dir=null; nextDir=null; placeFood(); }
+
+function tick(){
+  if(!running||paused) return;
+  if(nextDir && !((dir==='left'&&nextDir==='right')||(dir==='right'&&nextDir==='left')||(dir==='up'&&nextDir==='down')||(dir==='down'&&nextDir==='up'))){ dir=nextDir; }
+  nextDir=null;
+  if(!dir){ draw(); return; }
+  const head={...snake[0]};
+  if(dir==='left') head.x--; if(dir==='right') head.x++; if(dir==='up') head.y--; if(dir==='down') head.y++;
+  const out=!inBounds(head.x,head.y); const hitWall=!out&&grid[head.y][head.x]; const hitSelf=snake.some((s,i)=>i>0&&s.x===head.x&&s.y===head.y);
+  if(out||hitWall||hitSelf){ loseLifeAndReset(); draw(); return; }
+  snake.unshift(head);
+  if(food && head.x===food.x && head.y===food.y){ score++; pontosEl.textContent=score; placeFood(); } else { snake.pop(); }
+  draw();
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  // fundo animado
+  const t=Date.now()*0.002;
+  const grad=ctx.createLinearGradient(0,0,canvas.width,canvas.height);
+  grad.addColorStop(0,`hsl(${(t*50)%360},50%,10%)`);
+  grad.addColorStop(1,`hsl(${(t*50+180)%360},50%,20%)`);
+  ctx.fillStyle=grad; ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  // grid
+  for(let y=0;y<rows;y++){
+    for(let x=0;x<cols;x++){
+      const px=x*tile, py=y*tile;
+      if(grid[y][x]){
+        ctx.fillStyle=getVar('--wall'); ctx.fillRect(px,py,tile,tile);
+        ctx.strokeStyle=getVar('--wall-border'); ctx.strokeRect(px,py,tile,tile);
+      } else {
+        ctx.fillStyle=((x+y)%2===0)?getVar('--floorA'):getVar('--floorB');
+        ctx.fillRect(px,py,tile,tile);
+      }
+    }
+  }
+  // comida pulsante
+  if(food){
+    const cx=food.x*tile+tile/2, cy=food.y*tile+tile/2;
+    const pulse=1+0.1*Math.sin(Date.now()*0.01);
+    ctx.beginPath(); ctx.fillStyle=getVar('--food'); ctx.shadowColor=getVar('--food'); ctx.shadowBlur=12; ctx.arc(cx,cy,tile*0.36*pulse,0,Math.PI*2); ctx.fill();
+  }
+
+  // cobra
+  for(let i=snake.length-1;i>=0;i--){
+    const s=snake[i], px=s.x*tile, py=s.y*tile;
+    if(i===0){
+      const g=ctx.createLinearGradient(px,py,px+tile,py+tile);
+      g.addColorStop(0,getVar('--headA')); g.addColorStop(1,getVar('--headB'));
+      ctx.fillStyle=g; ctx.shadowColor=getVar('--headB'); ctx.shadowBlur=14; ctx.fillRect(px,py,tile,tile);
+      ctx.shadowBlur=0;
+      ctx.fillStyle='#fff'; ctx.fillRect(px + tile*0.62, py + tile*0.28, Math.max(1,Math.round(tile*0.08)), Math.max(1,Math.round(tile*0.08)));
+    } else {
+      ctx.fillStyle=(i%2===0)?getVar('--bodyA'):getVar('--bodyB');
+      ctx.shadowColor=(i%2===0)?getVar('--bodyA'):getVar('--bodyB'); ctx.shadowBlur=8;
+      ctx.fillRect(px,py,tile,tile);
+      ctx.shadowBlur=0;
+    }
+  }
+}
+
+function getVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+
+document.addEventListener('keydown',(e)=>{
+  const k=e.key;
+  if(['ArrowUp','w','W'].includes(k)) nextDir='up';
+  else if(['ArrowDown','s','S'].includes(k)) nextDir='down';
+  else if(['ArrowLeft','a','A'].includes(k)) nextDir='left';
+  else if(['ArrowRight','d','D'].includes(k)) nextDir='right';
+  else if(k===' '||k==='Spacebar'){ e.preventDefault(); pauseGame(); }
+});
+canvas.addEventListener('click',()=>canvas.focus());
+btnStart.addEventListener('click',startGame);
+btnPause.addEventListener('click',pauseGame);
+btnReiniciar.addEventListener('click',()=>{if(running){ stopGameToMenu();} startGame();});
+btnVoltar.addEventListener('click',()=>{ stopGameToMenu(''); });
+
+draw();
+setLives(3);
+
+})();
+</script>
+</body>
+</html>

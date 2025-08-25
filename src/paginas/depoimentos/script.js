@@ -10,7 +10,7 @@ prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
 })
-// setInterval(() => {
-//     let items = document.querySelectorAll('.item');
-//     document.querySelector('.slide').appendChild(items[0]);
-// }, 15000);
+setInterval(() => {
+    let items = document.querySelectorAll('.item');
+    document.querySelector('.slide').appendChild(items[0]);
+}, 5000);

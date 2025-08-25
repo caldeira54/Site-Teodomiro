@@ -41,7 +41,7 @@ header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 132px;
   padding: 50px 20px;
 }
 
@@ -54,6 +54,9 @@ header {
   transition: transform 0.3s, box-shadow 0.3s;
   opacity: 0;
   transform: translateY(50px);
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .course-card h2 {
@@ -61,7 +64,7 @@ header {
   margin-bottom: 15px;
 }
 
-.course-card button {
+.course-card a {
   margin-top: 15px;
   background: #4fc3f7;
   border: none;
@@ -71,9 +74,12 @@ header {
   cursor: pointer;
   font-weight: bold;
   transition: transform 0.3s, background 0.3s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
-.course-card button:hover {
+.course-card a:hover {
   background: #29b6f6;
   transform: scale(1.1);
 }

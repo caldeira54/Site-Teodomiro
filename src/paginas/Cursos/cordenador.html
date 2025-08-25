@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coordenador Wilson • Depoimentos</title>
+  <meta name="description" content="Página dinâmica apresentando o Coordenador Wilson e seus depoimentos, com animações, modo escuro e formulário para novos relatos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cordenador.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">W</div>
+      <div class="titles">
+        <h1>Coordenador Wilson</h1>
+        <p class="subtitle">Gestão • Educação • Comunidade</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="themeToggle" class="btn ghost" aria-label="Alternar tema">🌗</button>
+      <button id="openForm" class="btn primary">+ Novo depoimento</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="sobre-wilson">
+      <img class="avatar" src="assets/wilson.jpg" alt="Foto do Coordenador Wilson" onerror="this.src='https://via.placeholder.com/160x160.png?text=Wilson'"/>
+      <div class="hero-text">
+        <h2 id="sobre-wilson">Sobre o Wilson</h2>
+        <p>Wilson é coordenador pedagógico com foco em metodologias ativas, acolhimento e fortalecimento do protagonismo estudantil. Organiza projetos interdisciplinares, forma docentes e mantém diálogo permanente com as famílias.</p>
+        <ul class="badges" aria-label="Principais qualidades">
+          <li>Escuta ativa</li>
+          <li>Gestão humanizada</li>
+          <li>Resultados consistentes</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Ferramentas de busca e filtro">
+      <input id="searchInput" class="input" type="search" placeholder="Buscar por autor ou palavra-chave..." aria-label="Buscar depoimentos" />
+      <select id="sortSelect" class="input" aria-label="Ordenar depoimentos">
+        <option value="newest">Mais recentes</option>
+        <option value="oldest">Mais antigos</option>
+        <option value="longest">Mais longos</option>
+        <option value="shortest">Mais curtos</option>
+      </select>
+    </section>
+
+    <section>
+      <h3 class="section-title">Depoimentos</h3>
+      <div id="list" class="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Modal de novo depoimento -->
+  <dialog id="depoModal" class="modal">
+    <form id="depoForm" method="dialog" class="card">
+      <header class="modal-header">
+        <h4>Novo depoimento</h4>
+        <button type="button" class="btn icon" id="closeModal" aria-label="Fechar">✖</button>
+      </header>
+
+      <div class="form-grid">
+        <label>
+          <span>Seu nome</span>
+          <input class="input" name="autor" required placeholder="Ex.: Ana Souza"/>
+        </label>
+        <label>
+          <span>Relação com o Wilson</span>
+          <input class="input" name="relacao" placeholder="Ex.: Aluna, Docente, Responsável"/>
+        </label>
+        <label class="full">
+          <span>Depoimento</span>
+          <textarea class="input" name="texto" rows="5" required placeholder="Escreva aqui seu depoimento"></textarea>
+        </label>
+      </div>
+
+      <footer class="modal-footer">
+        <button class="btn ghost" type="button" id="cancelar">Cancelar</button>
+        <button class="btn primary" type="submit">Publicar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Comunidade Escolar • Feito com cuidado para o Coordenador Wilson</p>
+  </footer>
+
+  <script src="cordenador.js</script>
+</body>
+</html>

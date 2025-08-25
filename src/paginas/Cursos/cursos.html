@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursos • Depoimentos dos Professores</title>
+  <link rel="stylesheet" href="cursos.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">✦</span>
+      <h1>Cursos • Depoimentos</h1>
+    </div>
+
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="Pesquisar professor, habilidade ou instituição…" />
+      <button id="clearSearch" aria-label="Limpar busca">×</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Carrossel de depoimentos -->
+    <section class="carousel-section">
+      <h2>O que dizem nossos professores</h2>
+      <div class="carousel" id="carousel" aria-roledescription="carousel">
+        <!-- Slides gerados via JS -->
+        <button class="nav prev" id="prevBtn" aria-label="Anterior">‹</button>
+        <button class="nav next" id="nextBtn" aria-label="Próximo">›</button>
+        <div class="dots" id="dots"></div>
+      </div>
+    </section>
+
+    <!-- Filtros rápidos -->
+    <section class="filters">
+      <h3>Filtrar por habilidades</h3>
+      <div class="chips" id="chipContainer">
+        <!-- chips gerados via JS -->
+      </div>
+    </section>
+
+    <!-- Cards de professores -->
+    <section class="grid" id="profGrid" aria-live="polite">
+      <!-- cards gerados via JS -->
+    </section>
+  </main>
+
+  <!-- Modal Detalhes -->
+  <dialog id="profModal">
+    <article class="modal-card">
+      <button class="close" id="closeModal" aria-label="Fechar">×</button>
+      <div class="modal-header">
+        <div class="avatar" id="modalAvatar" aria-hidden="true">
+          <img src="../../imagens/img arthur.jpeg" alt="">
+          <img src="../../imagens/img.11jp.jpg" alt="">
+        </div>
+        <div>
+          <h3 id="modalName"></h3>
+          <p id="modalRole" class="muted"></p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <h4>Formação acadêmica</h4>
+        <p id="modalGrad"></p>
+
+        <h4>Experiências</h4>
+        <ul id="modalExp"></ul>
+
+        <h4>Experiência em ensino</h4>
+        <p id="modalTeach"></p>
+
+        <h4>Habilidades</h4>
+        <div id="modalSkills" class="chips"></div>
+
+        <h4>Mensagem Motivadora</h4>
+        <blockquote id="modalMsg"></blockquote>
+      </div>
+    </article>
+  </dialog>
+
+  <footer class="footer">
+    <p> <span id="year"></span> </p>
+  </footer>
+
+  <script src="cursos.js"></script>
+</body>
+</html>
