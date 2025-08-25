@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(168, 194, 241);
+}
+
+
+h1{
+    text-align: center;
+    padding-top: 75px;
+}
+
+.projetoliterario{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+
+.jogosdeinterclasse{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+.quadrilha{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+.sonhoseprojetodevida {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+.setedesetembro {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+    img {
+        width: 20%;
+    }
+}
+.bailedeprimavera {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
+.semanadascriancas {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
+.showdetalentos {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
+.semanadeeducacaoparaavida {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
+.feiradeciencias {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
+.auladasaudade {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
+.cerimoniadeformatura {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        width: 45%;
+        font-size: 24px;        
+    }
+}
