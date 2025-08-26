@@ -20,7 +20,7 @@ const professores = [
     depoimento: "O conhecimento é a ferramenta mais poderosa que você pode ter — e juntos vamos aprender a usá-la para abrir portas e criar oportunidades.",
     corAvatar: "linear-gradient(135deg,#5ac8fa,#8c7bff)",
     iniciais: "AC",
-    foto: "../../imagens/img arthur.jpeg"
+    foto: "../../imagens/a5.jpeg"
   },
 
   // Professor 2: Cássio substituindo Maria Souza
@@ -59,10 +59,10 @@ const professores = [
       "Arquitetura e Urbanismo",
       "Licitações e Obras Públicas"
     ],
-    depoimento: "Acredito que a informática é a porta para o futuro, e estou aqui para abrir essa porta junto com você.",
+    depoimento: "Meu objetivo é transformar conhecimento em oportunidades para todos os alunos.Vamos juntos trilhar esse caminho!",
     corAvatar: "linear-gradient(135deg,#ff9f43,#1dd1a1)",
     iniciais: "CO",
-    foto: "../../imagens/img cassio.jpeg"
+    foto: "../../imagens/C2.png"
   },
 
   // Professor 3: exemplo complementar (mantido)
@@ -159,9 +159,8 @@ function renderGrid() {
     card.innerHTML = `
       <div class="head">
         <div class="avatar" style=" background:${p.corAvatar};
-            ${p.foto ? `background-image:url('${p.foto}')` : ""};
             background-size:cover; background-position:center;">
-            ${!p.foto ? `<span class="iniciais">${p.iniciais ?? ""}</span>` : ""}
+            ${p.iniciais}
         </div>
         <div>
           <h4>${p.nome}</h4>
@@ -178,11 +177,15 @@ function renderGrid() {
 
       <div class="actions">
         <button class="btn" data-action="vermais" data-id="${idx}">Ver detalhes</button>
-        <button class="btn primary" data-action="ouvir" data-id="${idx}">Ouvir depoimento</button>
+      
       </div>
     `;
     grid.appendChild(card);
   });
+
+  //cassio 2
+   
+
 
   // bind actions
   $$(".btn", grid).forEach(btn => {
@@ -202,7 +205,7 @@ const closeModal = $("#closeModal");
 
 function openModal(id) {
   const p = professores[id];
-  $("#modalAvatar").style.background = p.corAvatar;
+  $("#modalAvatar").style.backgroundImage = `url('${p.foto}')`;
   $("#modalName").textContent = p.nome;
   $("#modalRole").textContent = p.cargoAtual;
   $("#modalGrad").textContent = p.formacao;
