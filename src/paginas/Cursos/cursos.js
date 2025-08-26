@@ -1,5 +1,5 @@
 // ====== DADOS ======
-// Professor 1: dados reais fornecidos por você (Arthur)
+// Professor 1: Arthur (já fornecido)
 const professores = [
   {
     nome: "Arthur Alves Caldeira",
@@ -23,24 +23,49 @@ const professores = [
     foto: "../../imagens/img arthur.jpeg"
   },
 
-  // Professor 2: exemplo complementar (place-holder)
+  // Professor 2: Cássio substituindo Maria Souza
   {
-    nome: "Maria Souza",
-    cargoAtual: "Professora de Desenvolvimento Web",
-    formacao: "Especialista em Desenvolvimento Front-end.",
+    nome: "Cássio Tadeu de Oliveira",
+    cargoAtual: "Professor Coordenador — Escola Estadual Teodomiro Caldeira Leão (Aricanduva/MG)",
+    formacao: "Engenheiro Civil — Faculdade Pitágoras de Jundiaí (2019). Técnico em Informática — IFMG, Campus São João Evangelista (2010). Pós-graduação em Cálculo Estrutural e Fundações — FACULMINAS (cursando).",
     experiencias: [
-      "Coordenação de projetos de sites institucionais.",
-      "Mentoria de iniciação científica em acessibilidade web."
+      "Munayer Engenharia Integrada — Engenheiro Civil • Capelinha/MG",
+      "Prefeitura Municipal de Aricanduva — Engenheiro Civil • Aricanduva/MG",
+      "Escola Estadual Teodomiro Caldeira Leão — Professor Coordenador • Aricanduva/MG",
+      "Câmara Municipal de Aricanduva — Controlador Interno • Aricanduva/MG",
+      "Construtora J & D — Auxiliar de Engenharia Civil • Várzea Paulista/SP",
+      "Crystal Informática — Técnico em Informática • Jundiaí/SP",
+      "Sifco S/A — Operador de Máquinas Industriais • Jundiaí/SP",
+      "Probank S/A — Técnico de Manutenção de Urnas • Jundiaí/SP",
+      "Duratex S/A — Ajudante Geral • Jundiaí/SP"
     ],
-    ensino: "Atuação com turmas do ensino médio técnico.",
-    habilidades: ["HTML", "CSS", "JavaScript", "Acessibilidade", "UX/UI"],
-    depoimento: "Aprender a programar é aprender a resolver problemas do mundo real com criatividade.",
-    corAvatar: "linear-gradient(135deg,#2dd4bf,#5ac8fa)",
-    iniciais: "MS",
-    foto: "../../imagens/img.11jp.jpg"
+    ensino: "15 anos de atuação em tecnologia e engenharia, sendo 4 anos dedicados ao ensino.",
+    habilidades: [
+      "Montagem e manutenção de computadores",
+      "Automação comercial",
+      "Sistemas de vigilância",
+      "Redes e impressoras",
+      "Sistemas operacionais",
+      "Empreendedorismo",
+      "Renderização",
+      "Pacote Office",
+      "Adobe",
+      "Autodesk",
+      "CorelDRAW",
+      "Revit",
+      "Eberick Infinity",
+      "SketchUp",
+      "Metrologia",
+      "Arquitetura e Urbanismo",
+      "Licitações e Obras Públicas"
+    ],
+    depoimento: "Acredito que a informática é a porta para o futuro, e estou aqui para abrir essa porta junto com você.",
+    corAvatar: "linear-gradient(135deg,#ff9f43,#1dd1a1)",
+    iniciais: "CO",
+    foto: "../../imagens/img cassio.jpeg"
   },
 
-  // Professor 3: exemplo complementar (place-holder)
+  // Professor 3: exemplo complementar (mantido)
   {
     nome: "Carlos Pereira",
     cargoAtual: "Professor de Programação e Dados",
@@ -57,7 +82,6 @@ const professores = [
     foto: "../../imagens/img.11jp.jpg"
   }
 ];
-
 // ====== UTIL ======
 const $ = (q, ctx = document) => ctx.querySelector(q);
 const $$ = (q, ctx = document) => [...ctx.querySelectorAll(q)];

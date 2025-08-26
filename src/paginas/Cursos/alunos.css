@@ -1,0 +1,102 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(10, 14, 24, .9), rgba(10, 14, 24, .75));
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+/* Container */
+#equipe-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Animação de entrada */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Foto estilo cartão */
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.6s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Animação da foto ao hover */
+.card img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+/* Nome */
+.card h2 {
+  font-size: 1.2rem;
+  color: #4dabf7;
+  margin: 10px 0 5px;
+}
+
+/* Idade e página */
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Rodapé */
+footer {
+  background: #222;
+  color: #ccc;
+  padding: 15px;
+  font-size: 0.8rem;
+  margin-top: 30px;
+}
