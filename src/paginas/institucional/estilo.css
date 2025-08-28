@@ -69,3 +69,11 @@
       line-height: 1.6;
 }
 
+.imagem1{
+    display:flex;
+    width: 100%;
+}
+
+.imagem1 img{
+    width: 50%;
+}
