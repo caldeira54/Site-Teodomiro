@@ -75,5 +75,17 @@
 }
 
 .imagem1 img{
-    width: 50%;
+    width: 45%;
+}
+.imagem1 div{
+    width: 45%;
+    margin-left: 15px;
+}
+.imagem2{
+    display:flex;
+    width: 90%;
+    justify-content: space-around;
+}
+.imagem2 img{
+    width: 45%;
 }
