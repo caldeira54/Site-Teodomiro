@@ -89,3 +89,12 @@
 .imagem2 img{
     width: 45%;
 }
+.fanfarra{
+    display: grid;
+    grid-template-columns: 600px 600px ;
+    gap: 50px;
+
+}
+.fanfarra img{
+    width: 400px;
+}
