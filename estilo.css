@@ -190,8 +190,7 @@ li {
 }
 
 .slider li input:checked~img {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1; 
     z-index: 10;
 }
 
@@ -245,11 +244,20 @@ p {
 .teste {
     display: flex;
     width: 100%;
+    align-items: center;
 }
 
 .texto {
     width: 50%;
     color: #fff;
+}
+
+.imagens {
+    width: 50%;
+
+}
+.imagens img{
+    width: 100%;
 }
 
 .botoes {
