@@ -53,8 +53,6 @@ header {
 
 .card img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
     object-fit: inherit;
     margin: 0 auto 10px;
 }
@@ -69,21 +67,10 @@ header {
     color: #555;
 }
 
-.btn-ver {
-    margin-top: 15px;
-    padding: 10px 20px;
+.botao-abrir {
     background-color: #0077cc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.95em;
-    transition: background-color 0.3s ease;
 }
 
-.btn-ver:hover {
-    background-color: #005fa3;
-}
 
 .formulario {
     text-align: center;
