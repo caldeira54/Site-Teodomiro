@@ -62,7 +62,7 @@ const professores = [
     depoimento: "Meu objetivo é transformar conhecimento em oportunidades para todos os alunos.Vamos juntos trilhar esse caminho!",
     corAvatar: "linear-gradient(135deg,#ff9f43,#1dd1a1)",
     iniciais: "CO",
-    foto: "../../imagens/C2.png"
+    foto: "../../imagens/C25%.png"
   },
 
   // Professor 3: exemplo complementar (mantido)

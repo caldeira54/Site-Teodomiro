@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
+    color: #333;
+}
+
+header {
+    background-color: #0077cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.depoimentos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    min-height: 300px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    border-radius: 50%;
+    object-fit: inherit;
+    margin: 0 auto 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1em;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.botao-abrir {
+    background-color: #0077cc;
+}
+
+
+.formulario {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario h2 {
+    margin-bottom: 20px;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 80%;
+    max-width: 100px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario button {
+    padding: 20px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #005fa3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #eee;
+    font-size: 0.9em;
+}
+
+#form-depoimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Espaço entre os campos */
+    border-radius: 20px;
+    border: 1px solid #fff;
+    width: 20%;
+}
+
+#form-depoimento input,
+#form-depoimento textarea {
+    width: 80%;
+    max-width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+
+    #form-depoimento input,
+    #form-depoimento textarea {
+        width: 100%;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-conteudo {
+    background-color: oklch(70.88% 0.16589 242.895);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px oklch(0% 0 0);
+    max-height: 80vh;
+    overflow-y: auto;
+    word-wrap: break-word;
+
+}
+
+.fechar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar:hover {
+    color: #000;
+}
+
