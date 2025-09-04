@@ -10,10 +10,8 @@ body {
     color: #333;
 }
 
-header {
-    background-color: #0077cc;
-    color: white;
-    padding: 20px;
+#h1 {
+    padding-top: 100px;
     text-align: center;
 }
 
@@ -21,6 +19,10 @@ header {
     text-align: center;
     padding: 20px;
     font-size: 1.2em;
+
+    p {
+        text-align: center;
+    }
 }
 
 .depoimentos {
@@ -183,4 +185,3 @@ footer {
 .fechar:hover {
     color: #000;
 }
-
