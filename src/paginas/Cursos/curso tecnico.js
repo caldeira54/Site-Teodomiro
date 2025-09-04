@@ -17,7 +17,7 @@ function digitarTexto() {
   if (i < textoCompleto.length) {
     textoElemento.textContent += textoCompleto.charAt(i);
     i++;
-    setTimeout(digitarTexto, 25);
+    setTimeout(digitarTexto, 1);
   }
 }
 
