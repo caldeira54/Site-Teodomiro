@@ -49,38 +49,6 @@ nav {
     color: white;
 }
 
-/* CSS para o componente do cabeçalho */
-.cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(52, 127, 214);
-    height: 75px;
-    padding: 0 40px;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-}
-
-.cabecalho .logo {
-    height: 60px;
-}
-
-.cabecalho a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    margin-left: 20px;
-    transition: 0.3s ease-in-out;
-}
-
-.cabecalho a:hover {
-    color: white;
-    border-bottom: 2px solid white;
-}
-
-/* ---------------------------------- */
-
 body {
     background-color: rgb(177, 202, 223);
 }
