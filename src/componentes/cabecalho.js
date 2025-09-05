@@ -15,8 +15,7 @@ function verificar_componentes() {
         { texto: 'Segmentos de Educação', href: '../../paginas/segmentos_da_educacao/index.html' },
         { texto: 'Eventos', href: '../../paginas/eventos/index.html' },
         { texto: 'Regulamentos', href: '../../paginas/regulamentos/index.html' },
-        { texto: 'Cursos', href: '../../paginas/cursos/index.html' },
-        { texto: 'Projeto de Leitura', href: '../../paginas/projeto_de_leitura/index.html' }
+        { texto: 'Cursos', href: '../../paginas/cursos/index.html' }
     ];
 
     // Cria o cabeçalho para cada container
@@ -24,6 +23,15 @@ function verificar_componentes() {
         const nav = document.createElement('nav');
         nav.classList.add('cabecalho');
 
+        // --- adicionando logo ---
+        const logo = document.createElement('img');
+        logo.src = "../../../src/imagens/logo.png"; // ajuste o caminho conforme necessário
+        logo.alt = "Logo";
+        logo.classList.add("logo");
+        nav.appendChild(logo);
+        // ------------------------
+
+        // adiciona os links
         links.forEach(link => {
             const a = document.createElement('a');
             a.textContent = link.texto;
