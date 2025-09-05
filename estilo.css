@@ -49,34 +49,6 @@ nav {
     color: white;
 }
 
-/* Responsividade para telas até 360px */
-@media (max-width: 360px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        background-color: rgb(52, 127, 214);
-        position: absolute;
-        top: 75px;
-        right: 0;
-        width: 100%;
-        padding: 20px 0;
-    }
-
-    .menu a {
-        margin: 15px 0;
-        text-align: center;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    /* Quando o menu estiver ativo */
-    .menu.active {
-        display: flex;
-    }
-}
-
 /* CSS para o componente do cabeçalho */
 .cabecalho {
     display: flex;
@@ -161,10 +133,8 @@ footer {
     }
 
     .menu-rodape a:hover {
-        /* padding: 10px;
-        background-color: rgb(85, 147, 219);
-        border-radius: 30%; */
-        transform: scale(1.1);
+        color: white;
+        border-bottom: 2px solid white;
     }
 
     .sobre {
@@ -184,91 +154,6 @@ footer {
         width: 50px;
         padding: 5px;
     }
-}
-
-li {
-    list-style: none;
-}
-
-#prev {
-    left: 10px;
-}
-
-#next {
-    right: 10px;
-}
-
-.slider {
-    /* display: block; */
-    padding-top: 70px;
-    height: 879px;
-    width: 1800px;
-    display: flex;
-    justify-content: center;
-    /* margin: auto; */
-    margin-top: 20px;
-    position: relative;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slider li {
-    list-style: none;
-    position: absolute;
-    display: block;
-}
-
-.slider img {
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    vertical-align: top;
-}
-
-.slider input {
-    display: none;
-}
-
-.slider label {
-    background-color: #000;
-    bottom: 10px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    height: 10px;
-    position: absolute;
-    width: 10px;
-    z-index: 10;
-    border-radius: 50%;
-}
-
-.slider li:nth-child(1) label {
-    left: 10px;
-}
-
-.slider li:nth-child(2) label {
-    left: 40px;
-}
-
-.slider li:nth-child(3) label {
-    left: 70px;
-}
-
-.slider li:nth-child(4) label {
-    left: 100px;
-}
-
-.slider li:nth-child(5) label {
-    left: 130px;
-}
-
-.slider img {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.slider li input:checked~img {
-    opacity: 1;
-    z-index: 10;
 }
 
 p {
@@ -394,8 +279,6 @@ p {
 
     span {
         color: #fff;
-
-
     }
 
     h1 {
@@ -582,3 +465,153 @@ input#img-1:checked~.nav-dots label#img-dot-1,
 input#img-2:checked~.nav-dots label#img-dot-2,
 input#img-3:checked~.nav-dots label#img-dot-3,
 input#img-4:checked~.nav-dots label#img-dot-4, */
+
+/* Responsividade para telas até 360px */
+@media (max-width: 360px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(52, 127, 214);
+        position: absolute;
+        top: 75px;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .menu a {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Quando o menu estiver ativo */
+    .menu.active {
+        display: flex;
+    }
+
+    .div-slider {
+        margin: 100px 0 0 0;
+    }
+
+    .slides-front {
+        max-width: 300px;
+    }
+
+    .slide {
+        height: 180px;
+    }
+
+    .nav label {
+        font-size: 50pt;
+        line-height: 200px;
+        width: 20px;
+    } 
+
+    .teste {
+        flex-direction: column;
+        width: 100%;
+
+        .texto {
+            width: 100%;
+        }
+
+        .botoes {
+            margin-top: 10px;
+        }
+
+        .imagens {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
+    .matricula {
+        flex-direction: column;
+
+        .inscricao {
+            width: 100%;
+
+            span {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            a {
+                font-size: 14px;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .localizacao {
+        flex-direction: column;
+
+        .endereco {
+            width: 80%;
+
+            h1 {
+                font-size: 18px;
+            }
+
+            span {
+                font-size: 14px;
+            }
+
+            a {
+                font-size: 14px;
+                padding: 6px;
+            }
+        }
+    }
+
+    .sub-menu {
+        display: grid;
+        grid-template-columns: 50px 50px;
+        width: 100%;
+
+        .d {
+            width: 90px;
+            margin: 20px 0;
+
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .roda_pe {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            width: 60%;
+            margin-left: 60px;
+        }
+    }
+}
