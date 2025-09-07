@@ -23,22 +23,36 @@ function verificar_componentes() {
         const nav = document.createElement('nav');
         nav.classList.add('cabecalho');
 
-        // --- adicionando logo ---
+        // --- Logo ---
         const logo = document.createElement('img');
-        logo.src = "../../../src/imagens/logo.png"; // ajuste o caminho conforme necessário
+        logo.src = "../../../src/imagens/logo.png";
         logo.alt = "Logo";
         logo.classList.add("logo");
         nav.appendChild(logo);
-        // ------------------------
 
-        // adiciona os links
+        // --- Botão hambúrguer ---
+        const hamburger = document.createElement('button');
+        hamburger.classList.add('hamburger');
+        hamburger.innerHTML = "☰";
+        nav.appendChild(hamburger);
+
+        // --- Container de links ---
+        const menu = document.createElement('div');
+        menu.classList.add('menu');
+
         links.forEach(link => {
             const a = document.createElement('a');
             a.textContent = link.texto;
             a.href = link.href;
-            nav.appendChild(a);
+            menu.appendChild(a);
         });
 
+        nav.appendChild(menu);
         container.appendChild(nav);
+
+        // Evento de clique no hambúrguer
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
     });
 }
