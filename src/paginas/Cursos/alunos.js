@@ -1,11 +1,11 @@
 // Lista de alunos
 const alunos = [
-  { nome: "Ana Souza", idade: 20, pagina: "Página Inicial", foto: "../../imagens/img.11jp.jpg" },
-  { nome: "Bruno Silva", idade: 22, pagina: "Página de Produtos", foto: "imagens/aluno2.jpg" },
-  { nome: "Carla Mendes", idade: 21, pagina: "Página de Clientes", foto: "imagens/aluno3.jpg" },
-  { nome: "Diego Pereira", idade: 23, pagina: "Página de Contato", foto: "imagens/aluno4.jpg" },
-  { nome: "Fernanda Lima", idade: 20, pagina: "Página de Cadastro", foto: "imagens/aluno5.jpg" },
-  { nome: "Gabriel Costa", idade: 22, pagina: "Página de Histórico", foto: "imagens/aluno6.jpg" },
+  { nome: "João Pedro ", idade: 17, pagina: "Cursos,proposta pedagogicas.", foto: "../../imagens/joaop11.JPG" },
+  { nome: "Jamille ", idade: 18, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/jamill2.JPG" },
+  { nome: "Ariana", idade: 18, pagina: "Cursos,proposta pedagogicas.", foto: "../../imagens/ari1.jpg" },
+  { nome: "Rhaisa", idade: 18, pagina: "Institucional", foto: "../../imagens/rhaisa.jpg" },
+  { nome: "Larissa", idade: 17, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/larissa.jpg" },
+  { nome: "Rosielene ", idade: 17, pagina: "rsponsavel pelas fotos", foto: "../../imagens/rose.jpg" },
   { nome: "Mariana Oliveira", idade: 21, pagina: "Página de Pesquisa", foto: "imagens/aluno7.jpg" }
  
 ];
