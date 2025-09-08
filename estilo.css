@@ -744,3 +744,49 @@ input#img-4:checked~.nav-dots label#img-dot-4, */
         }
     }
 }
+
+@media screen and (min-width: 1100px) and (max-width: 1520px) {
+    .div-slider {
+        margin: 100px 0 0 0;
+    }
+
+    .slides-front {
+        max-width: 1000px;
+        margin-bottom: 300px;
+    }
+
+    .slide {
+        height: 500px;
+    }
+
+    .nav label {
+        font-size: 100pt;
+        line-height: 500px;
+        width: 20px;
+    }
+
+    .comeco {
+        padding: 5%;
+    }
+
+    .matricula {
+        img {
+            width: 50%;
+        }
+    }
+
+    footer {
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
