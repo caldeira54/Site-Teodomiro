@@ -10,10 +10,8 @@ body {
     color: #333;
 }
 
-header {
-    background-color: #0077cc;
-    color: white;
-    padding: 20px;
+#h1 {
+    padding-top: 100px;
     text-align: center;
 }
 
@@ -21,6 +19,10 @@ header {
     text-align: center;
     padding: 20px;
     font-size: 1.2em;
+
+    p {
+        text-align: center;
+    }
 }
 
 .depoimentos {
@@ -71,7 +73,6 @@ header {
     background-color: #0077cc;
 }
 
-
 .formulario {
     text-align: center;
     padding: 30px;
@@ -120,7 +121,6 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    /* Espaço entre os campos */
     border-radius: 20px;
     border: 1px solid #fff;
     width: 20%;
@@ -133,17 +133,6 @@ footer {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-@media (max-width: 600px) {
-    .card {
-        width: 90%;
-    }
-
-    #form-depoimento input,
-    #form-depoimento textarea {
-        width: 100%;
-    }
 }
 
 .modal {
@@ -169,7 +158,6 @@ footer {
     max-height: 80vh;
     overflow-y: auto;
     word-wrap: break-word;
-
 }
 
 .fechar {
@@ -184,3 +172,26 @@ footer {
     color: #000;
 }
 
+@media (max-width: 360px) {
+    #h1 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .depoimentos {
+        flex-direction: column;
+        align-items: center;
+
+        .card {
+            width: 300px;
+        }
+    }
+
+    #form-depoimento {
+        width: 100%;
+        padding: 10px;
+    }
+}
