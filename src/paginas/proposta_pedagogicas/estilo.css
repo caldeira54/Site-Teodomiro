@@ -1,4 +1,3 @@
-
 .h1 {
   font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
@@ -10,7 +9,6 @@
   right: 600px;
   top: -50px;
 }
-
 
 .p {
   animation-duration: 3s;
@@ -26,9 +24,6 @@
   top: -50px;
 }
 
-
-
-
 @keyframes slidein {
   from {
     margin-left: 100%;
@@ -40,9 +35,6 @@
     width: 100%;
   }
 }
-
- 
-
 
 .conteudo {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -56,7 +48,7 @@
   text-shadow: 2px 2px 4px rgb(52, 127, 214);
   height: 200px;
   text-align: justify;
-  color:rgb(53, 54, 54)
+  color: rgb(53, 54, 54)
 }
 
 .container {
@@ -73,14 +65,13 @@
 
 img {
   height: 70%;
-  /* width: 600px; */
   position: absolute;
   margin-left: 100px;
   padding: 10px;
   left: 1050px;
   top: 150px;
-  border: 30px solid  rgb(156, 201, 253) ;
-border-radius: 10px;
+  border: 30px solid rgb(156, 201, 253);
+  border-radius: 10px;
 }
 
 body {
@@ -89,8 +80,23 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
+  background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
 }
 
+@media screen and (max-width: 340px) {
+  .modificacao {
+    .conteudo {
+      right: 0;
+      top: 0;
+      font-size: 18px;
+    }
 
-
+    #img {
+      position: static;
+      margin-left: 0;
+      padding: 0;
+      left: 0;
+      top: 0;
+    }
+  }
+}
