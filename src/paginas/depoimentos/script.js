@@ -7,13 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-<<<<<<< HEAD
 prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
 })
 
-=======
         const nome = nomeInput.value.trim();
         const texto = textoInput.value.trim();
 
@@ -37,4 +35,3 @@ prev.addEventListener('click', function(){
         }
     });
 });
->>>>>>> 9a53d244f7490e201452780c7688c46a71c96e85

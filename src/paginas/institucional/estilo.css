@@ -3,15 +3,14 @@
     padding: 0;
 }
 
-
 .contaner {
     display: flex;
     justify-content: baseline;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    padding: 20px; 
-  animation: typing 1s steps(20, end) forwards;
+    padding: 20px;
+    animation: typing 1s steps(20, end) forwards;
 }
 
 .h1 {
@@ -24,77 +23,92 @@
 
 .text1 {
     font-size: 19px;
-    font-family:  Arial;
+    font-family: Arial;
     color: rgb(0, 0, 0);
     text-align: justify;
-     padding: 30px; 
+    padding: 30px;
 }
-
 
 .text2 {
     font-size: 19px;
-    font-family:  Arial;
+    font-family: Arial;
     color: rgb(0, 0, 0);
-     padding: 30px; 
+    padding: 30px;
 }
 
 .frase {
     font-size: 20px;
-    font-family: Arial ;
+    font-family: Arial;
 }
 
 .corpo {
-     background-color:  rgb(177,202,223);
+    background-color: rgb(177, 202, 223);
 }
 
 .nome {
     text-align: end;
 }
-.h2{
+
+.h2 {
     color: rgb(0, 7, 131);
-    font-family:  Arial;
-}
-.h3{
-    color:rgb(0, 0, 0);
-    font-family:  Arial;
+    font-family: Arial;
 }
 
-.poet{
+.h3 {
+    color: rgb(0, 0, 0);
+    font-family: Arial;
+}
+
+.poet {
     margin-left: 60%;
 }
-.mine{
-   width: 60%;            
-  margin: 0 auto;         
-   font-size: 18px;
-      line-height: 1.6;
+
+.mine {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-.imagem1{
-    display:flex;
+.imagem1 {
+    display: flex;
     width: 100%;
 }
 
-.imagem1 img{
+.imagem1 img {
     width: 45%;
 }
-.imagem1 div{
+
+.imagem1 div {
     width: 45%;
     margin-left: 15px;
 }
-.imagem2{
-    display:flex;
+
+.imagem2 {
+    display: flex;
     width: 90%;
     justify-content: space-around;
 }
-.imagem2 img{
+
+.imagem2 img {
     width: 45%;
 }
-.fanfarra{
-    display: grid;
-    grid-template-columns: 600px 600px ;
-    gap: 50px;
 
+.fanfarra {
+    display: grid;
+    grid-template-columns: 600px 600px;
+    gap: 50px;
 }
-.fanfarra img{
+
+.fanfarra img {
     width: 400px;
 }
+
+<<<<<<< HEAD
+=======
+@media (min-width: 360px) { 
+    body{
+        background-color: aquamarine;
+    }
+}
+>>>>>>> a423842c87e4e1a196c92414db1bb49808b26170

@@ -15,8 +15,7 @@ function verificar_componentes() {
         { texto: 'Segmentos de Educação', href: '../../paginas/segmentos_da_educacao/index.html' },
         { texto: 'Eventos', href: '../../paginas/eventos/index.html' },
         { texto: 'Regulamentos', href: '../../paginas/regulamentos/index.html' },
-        { texto: 'Cursos', href: '../../paginas/cursos/index.html' },
-        { texto: 'Projeto de Leitura', href: '../../paginas/projeto_de_leitura/index.html' }
+        { texto: 'Cursos', href: '../../paginas/cursos/index.html' }
     ];
 
     // Cria o cabeçalho para cada container
@@ -24,13 +23,36 @@ function verificar_componentes() {
         const nav = document.createElement('nav');
         nav.classList.add('cabecalho');
 
+        // --- Logo ---
+        const logo = document.createElement('img');
+        logo.src = "../../../src/imagens/logo.png";
+        logo.alt = "Logo";
+        logo.classList.add("logo");
+        nav.appendChild(logo);
+
+        // --- Botão hambúrguer ---
+        const hamburger = document.createElement('button');
+        hamburger.classList.add('hamburger');
+        hamburger.innerHTML = "☰";
+        nav.appendChild(hamburger);
+
+        // --- Container de links ---
+        const menu = document.createElement('div');
+        menu.classList.add('menu');
+
         links.forEach(link => {
             const a = document.createElement('a');
             a.textContent = link.texto;
             a.href = link.href;
-            nav.appendChild(a);
+            menu.appendChild(a);
         });
 
+        nav.appendChild(menu);
         container.appendChild(nav);
+
+        // Evento de clique no hambúrguer
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
     });
 }
