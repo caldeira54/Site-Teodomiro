@@ -298,3 +298,28 @@ renderSlides();
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.open) modal.close();
 });
+// Criar botão após entrar na página
+function criarBotaoVoltar() {
+  const btn = document.createElement("button");
+  btn.className = "btn-voltar";
+  btn.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.4 1.4L10.9 11l5.3 5.3A1 1 0 0 1 15.5 19z"/>
+    </svg>
+    <span>Voltar</span>
+  `;
+
+  btn.addEventListener("click", () => {
+    window.location.href = "cursos.html"; // Página de destino
+  });
+
+  document.body.appendChild(btn);
+
+  // Efeito de entrada
+  setTimeout(() => btn.classList.add("show"), 200);
+}
+
+// Espera 2 segundos após entrar na página para mostrar o botão
+window.addEventListener("load", () => {
+  setTimeout(criarBotaoVoltar, 2000);
+});
