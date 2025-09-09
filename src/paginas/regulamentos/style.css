@@ -133,3 +133,27 @@ body {
   border: 3px solid rgb(52, 127, 214);
   right: -25%;
 }
+
+@media screen and (max-width: 360px) {
+  .wrapper {
+    position: relative;
+    transform: none;
+    left: 0;
+    top: 0;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 361px) and (max-width: 540px) {
+  .wrapper {
+    position: relative;
+    transform: none;
+    left: 0;
+    top: 0;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+}
