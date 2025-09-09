@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: rgb(168, 194, 241);
+    background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
 }
 
 .container {
