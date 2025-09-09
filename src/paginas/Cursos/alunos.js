@@ -6,8 +6,8 @@ const alunos = [
   { nome: "Rhaisa", idade: 18, pagina: "Institucional", foto: "../../imagens/rhaisa.jpg" },
   { nome: "Larissa", idade: 17, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/larissa.jpg" },
   { nome: "Rosielene ", idade: 17, pagina: "rsponsavel pelas fotos", foto: "../../imagens/rose.jpg" },
-  { nome: "Mariana Oliveira", idade: 21, pagina: "Página de Pesquisa", foto: "imagens/aluno7.jpg" }
- 
+  { nome: "Nicolas ", idade: 18, pagina: "Home ", foto: "../../imagens/nicolas.jpg" }
+
 ];
 
 // Container
