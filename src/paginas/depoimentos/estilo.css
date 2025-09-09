@@ -71,6 +71,14 @@ body {
 
 .botao-abrir {
     background-color: #0077cc;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+.botao-abrir:hover{
+    transform: scale(1.05);
+    cursor:pointer;
 }
 
 .formulario {
