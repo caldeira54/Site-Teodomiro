@@ -78,9 +78,14 @@ footer {
     bottom: 0;
     padding: 1%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
     align-items: center;
+    flex-direction: column;
+
+    div {
+        display: flex;
+    }
 
     img {
         width: 200px;
@@ -166,7 +171,7 @@ p {
 }
 
 .comeco {
-    margin: 220px 0 100px 0;
+    margin: 100px 0 100px 0;
     background-color: #184974;
     padding: 5% 15% 5% 15%;
 }
@@ -300,7 +305,7 @@ p {
 
 .div-slider {
     width: 100%;
-    margin: 100px 0 600px 0;
+    margin: 100px 0 0 0;
     text-align: center;
 }
 
@@ -408,10 +413,11 @@ input:checked+.slide-container .nav label {
     height: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
     text-align: center;
     margin-top: 20px;
+    height: 825px;
 }
 
 .nav-dots .nav-dot {
