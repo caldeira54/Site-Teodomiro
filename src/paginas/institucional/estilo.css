@@ -104,3 +104,12 @@
     width: 400px;
 }
 
+.projetos{
+     display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    animation: typing 1s steps(20, end) forwards;
+}
