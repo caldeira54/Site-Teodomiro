@@ -19,7 +19,7 @@ header {
   padding: 2rem;
   background: linear-gradient(180deg, rgba(10, 14, 24, .9), rgba(10, 14, 24, .75));
   color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
@@ -40,6 +40,7 @@ header h1 {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -51,7 +52,7 @@ header h1 {
   background: white;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   animation: fadeUp 0.8s ease forwards;
   opacity: 0;
@@ -59,7 +60,7 @@ header h1 {
 
 .card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Foto estilo cartão */
@@ -70,7 +71,7 @@ header h1 {
   border-radius: 12px;
   margin-bottom: 15px;
   transition: transform 0.6s ease;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Animação da foto ao hover */
@@ -100,6 +101,7 @@ footer {
   font-size: 0.8rem;
   margin-top: 30px;
 }
+
 .btn-voltar {
   position: fixed;
   top: 20px;
@@ -115,7 +117,7 @@ footer {
   cursor: pointer;
   background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
-  box-shadow: 0 4px 14px rgba(0,0,0,.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.4s ease;
   opacity: 0;
   transform: translateY(-30px);
@@ -129,7 +131,7 @@ footer {
 
 .btn-voltar:hover {
   transform: scale(1.07);
-  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
 }
 
 .btn-voltar svg {

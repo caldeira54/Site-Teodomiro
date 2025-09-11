@@ -12,7 +12,7 @@ body {
   color: var(--text);
   font-family: Arial, sans-serif;
   line-height: 1.6;
-    background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
+  background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
 }
 
 .container {
@@ -54,13 +54,16 @@ h1 {
   color: var(--muted);
   white-space: pre-line;
 }
+
 .imagem img {
   width: 100%;
-  max-width: none; /* não limita mais */
+  max-width: none;
+  /* não limita mais */
   height: auto;
   max-width: 100%;
   border-radius: 10px;
 }
+
 .btn-voltar {
   position: fixed;
   top: 20px;
@@ -76,7 +79,7 @@ h1 {
   cursor: pointer;
   background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
-  box-shadow: 0 4px 14px rgba(0,0,0,.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.4s ease;
   opacity: 0;
   transform: translateY(-30px);
@@ -90,7 +93,7 @@ h1 {
 
 .btn-voltar:hover {
   transform: scale(1.07);
-  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
 }
 
 .btn-voltar svg {

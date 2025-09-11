@@ -39,7 +39,6 @@
 .conteudo {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 25px;
-  text-align: left;
   position: relative;
   right: 850px;
   top: -90px;
@@ -63,7 +62,7 @@
   margin-right: 50px;
 }
 
-img {
+#img {
   height: 70%;
   position: absolute;
   margin-left: 100px;
@@ -98,5 +97,17 @@ body {
       left: 0;
       top: 0;
     }
+  }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 1520px) {
+  .container {
+    width: 100%;
+  }
+
+  .conteudo {
+    top: 0;
+    right: 0;
+    position: static;
   }
 }

@@ -5,7 +5,7 @@ const textoCompleto = `
 A Escola Estadual Teodomiro Caldeira Leão, localizada em Aricanduva/MG, é referência na formação educacional e profissional da região.
 
 Entre as formações oferecidas, destacam-se:
-- O Curso Técnico de Informática, disponível nogut pull turnos noturno, com foco em preparar o aluno para o mercado de trabalho na área de tecnologia, abrangendo programação, redes, manutenção e suporte técnico.
+- O Curso Técnico de Informática, disponível no turno noturno, com foco em preparar o aluno para o mercado de trabalho na área de tecnologia, abrangendo programação, redes, manutenção e suporte técnico.
 - O EMTI (Ensino Médio em Tempo Integral), no qual os estudantes têm aulas das 7h às 16h05, com 9 horários diários, cada um com duração de 50 minutos. Essa estrutura permite maior aprofundamento nos conteúdos e integração entre disciplinas.
 
 Esse modelo de ensino integral amplia a carga horária, oferecendo não apenas as disciplinas regulares, mas também oficinas, projetos interdisciplinares, atividades culturais e esportivas, fortalecendo as competências técnicas e humanas.

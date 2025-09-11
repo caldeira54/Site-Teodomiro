@@ -310,7 +310,7 @@ function criarBotaoVoltar() {
   `;
 
   btn.addEventListener("click", () => {
-    window.location.href = "cursos.html"; // Página de destino
+    window.location.href = "index.html"; // Página de destino
   });
 
   document.body.appendChild(btn);

@@ -15,7 +15,7 @@ function verificar_componentes() {
         { texto: 'Segmentos de Educação', href: '../../paginas/segmentos_da_educacao/index.html' },
         { texto: 'Eventos', href: '../../paginas/eventos/index.html' },
         { texto: 'Regulamentos', href: '../../paginas/regulamentos/index.html' },
-        { texto: 'Cursos', href: '../../paginas/cursos/index.html' }
+        { texto: 'Cursos', href: '../../paginas/Cursos/index.html' }
     ];
 
     // Cria o cabeçalho para cada container
