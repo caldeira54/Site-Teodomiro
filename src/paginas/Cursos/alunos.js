@@ -1,13 +1,13 @@
 // Lista de alunos
 const alunos = [
-  { nome: "João Pedro ", idade: 17, pagina: "Cursos,proposta pedagogicas.", foto: "../../imagens/joaop11.JPG" },
+  { nome: "João Pedro ", idade: 17, pagina: "Cursos,proposta pedagógicas.", foto: "../../imagens/joaop11.JPG" },
   { nome: "Jamille ", idade: 18, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/jamill2.JPG" },
   { nome: "Ariana", idade: 18, pagina: "Cursos,proposta pedagogicas.", foto: "../../imagens/ari1.jpg" },
   { nome: "Rhaisa", idade: 18, pagina: "Institucional", foto: "../../imagens/rhaisa.jpg" },
   { nome: "Larissa", idade: 17, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/larissa.jpg" },
-  { nome: "Rosielene ", idade: 17, pagina: "rsponsavel pelas fotos", foto: "../../imagens/rose.jpg" },
-  { nome: "Mariana Oliveira", idade: 21, pagina: "Página de Pesquisa", foto: "imagens/aluno7.jpg" }
- 
+  { nome: "Rosielene ", idade: 17, pagina: "responsável pelas fotos", foto: "../../imagens/rose.jpg" },
+  { nome: "Nicolas ", idade: 18, pagina: "Home ", foto: "../../imagens/nicolas1.0.jpg" }
+
 ];
 
 // Container
