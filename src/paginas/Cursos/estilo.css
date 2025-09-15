@@ -118,3 +118,89 @@ header {
   transition: transform 0.1s ease;
   z-index: 1000;
 }
+/* RESPONSIVIDADE PARA CELULAR */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 80px 15px;
+  }
+
+  #typing-text {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .courses {
+    flex-direction: column;   /* Deixa os cards em coluna */
+    align-items: center;
+    gap: 30px;
+  }
+
+  .course-card {
+    width: 90%;               /* Ocupa quase toda a largura */
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 60px 10px;
+  }
+
+  #typing-text {
+    font-size: 1.4rem;
+  }
+
+  .p {
+    font-size: 0.9rem;
+  }
+
+  .course-card {
+    padding: 20px;
+  }
+
+  .course-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .course-card p {
+    font-size: 0.9rem;
+  }
+
+  .course-card a {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #typing-text {
+    font-size: 1.2rem;
+  }
+
+  .p {
+    font-size: 0.8rem;
+  }
+
+  .course-card {
+    width: 95%;
+  }
+}
+.cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* ajuste conforme a altura real do cabeçalho */
+  background: #141414; /* ou a cor que você usa */
+  z-index: 1000;
+}
+
+/* empurra o conteúdo pra baixo do cabeçalho */
+header {
+  margin-top: 80px; /* deve ser um pouco maior que a altura do cabeçalho */
+}
