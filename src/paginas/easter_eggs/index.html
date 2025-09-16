@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🐍 Cobrinha Teodomiro</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cobrinha — Neon Touch (botões funcionais)</title>
 <style>
 :root {
   --bg1:#0b0f1f;
@@ -66,6 +68,7 @@ canvas{
   backdrop-filter:blur(8px);
   box-shadow:0 0 40px rgba(0,255,255,0.2);
   animation:menuAppear 0.8s ease-out;
+  
 }
 @keyframes menuAppear{0%{opacity:0; transform:translateY(-20px)}100%{opacity:1; transform:translateY(0)}}
 #menu h2{ text-align:center; font-size:24px; margin-bottom:12px; color:#00f0ff; text-shadow:1px 1px 6px rgba(0,0,0,0.5);}
@@ -90,16 +93,55 @@ button.primary:hover{ filter:brightness(1.15); }
   #hud{ width:100%; }
   #menu{ width:100%; max-width:420px;}
 }
+
+/* touch D-pad */
+#touchControls{
+  margin-top:12px; display:flex; flex-direction:column; gap:8px; align-items:center;
+}
+#dpad{
+  display:grid; grid-template-columns: 64px 64px 64px; grid-template-rows: 64px 64px 64px; gap:8px;
+  justify-items:center; align-items:center;
+}
+.ctrlBtn{
+  width:64px;height:64px;border-radius:12px;border:2px solid rgba(0,207,255,0.12);
+  background:rgba(10,16,28,0.7); color:var(--accent);display:flex;justify-content:center;align-items:center;
+  font-size:22px; user-select:none; -webkit-user-select:none; touch-action:none;
+  box-shadow:0 6px 18px rgba(0,207,255,0.04);
+}
+.ctrlBtn.pressed{ transform:translateY(2px) scale(.98); background:rgba(0,207,255,0.16); color:#001218;
+  box-shadow:0 8px 30px rgba(0,207,255,0.18); }
+.ctrlBtn.empty{ background:transparent;border:none; box-shadow:none; pointer-events:none; }
+
+/* responsive */
+@media (max-width:900px){
+  #menu{ width:92vw; max-width:420px; }
+  #hud{ width:92vw; }
+}
 </style>
 </head>
 <body>
 
 <div id="gameCol">
-  <h1>🐍 Cobrinha Teodomiro</h1>
-  <canvas id="canvas" width="600" height="600" tabindex="0"></canvas>
+  <h1>🐍 Cobrinha — Neon Touch Fix</h1>
+  <div class="canvasWrap">
+    <canvas id="canvas" width="640" height="640" tabindex="0"></canvas>
+  </div>
   <div id="hud">
     <div>Vidas: <span id="vidas"></span></div>
     <div>Pontos: <span id="pontos">0</span></div>
+  </div>
+
+  <!-- Touch controls (D-pad) -->
+  <div id="touchControls" aria-hidden="false">
+    <div id="dpad">
+      <div class="ctrlBtn empty"></div>
+      <button class="ctrlBtn" id="btnUp" aria-label="Up">▲</button>
+      <div class="ctrlBtn empty"></div>
+
+      <button class="ctrlBtn" id="btnLeft" aria-label="Left">◀</button>
+      <button class="ctrlBtn" id="btnDown" aria-label="Down">▼</button>
+      <button class="ctrlBtn" id="btnRight" aria-label="Right">▶</button>
+    </div>
   </div>
 </div>
 
@@ -109,6 +151,7 @@ button.primary:hover{ filter:brightness(1.15); }
   <select id="fase">
     <option value="livre">Campo Livre</option>
     <option value="facil" selected>Labirinto Fácil</option>
+    <option value="dificil">Labirinto Difícil</option>
   </select>
   <label for="dificuldade">Dificuldade</label>
   <select id="dificuldade">
@@ -116,7 +159,8 @@ button.primary:hover{ filter:brightness(1.15); }
     <option value="medio" selected>Médio</option>
     <option value="rapido">Rápido</option>
   </select>
-  <div class="row">
+
+  <div class="row" style="margin-top:12px">
     <button class="primary" id="btnStart">Começar</button>
     <button id="btnPause">Pausar</button>
   </div>
@@ -124,165 +168,293 @@ button.primary:hover{ filter:brightness(1.15); }
     <button id="btnReiniciar">Reiniciar</button>
     <button id="btnVoltar">Voltar</button>
   </div>
-  <div id="msg"></div>
-  <div class="hint">Setas ou WASD • Clique no canvas para focar</div>
+  <div id="msg" style="margin-top:10px;min-height:22px;color:#ff9aa8"></div>
+  <div style="margin-top:8px;font-size:13px;color:#bfefff">Controles: Setas/WASD / Toque / Swipe</div>
 </div>
 
 <script>
-(()=>{
-const canvas=document.getElementById('canvas');
-const ctx=canvas.getContext('2d');
-const vidasEl=document.getElementById('vidas');
-const pontosEl=document.getElementById('pontos');
-const faseSel=document.getElementById('fase');
-const diffSel=document.getElementById('dificuldade');
-const btnStart=document.getElementById('btnStart');
-const btnPause=document.getElementById('btnPause');
-const btnReiniciar=document.getElementById('btnReiniciar');
-const btnVoltar=document.getElementById('btnVoltar');
-const msgEl=document.getElementById('msg');
+/*
+  Versão com botões touch funcionais.
+  - pointer events (pointerdown/pointerup) para D-pad (recomendo);
+  - fallback para touchstart;
+  - swipe no canvas;
+*/
 
-const cols=25, rows=25;
-const tile=canvas.width/cols;
+(() => {
+  /* --- DOM references --- */
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const vidasEl = document.getElementById('vidas');
+  const pontosEl = document.getElementById('pontos');
+  const faseSel = document.getElementById('fase');
+  const diffSel = document.getElementById('dificuldade');
+  const btnStart = document.getElementById('btnStart');
+  const btnPause = document.getElementById('btnPause');
+  const btnReiniciar = document.getElementById('btnReiniciar');
+  const btnVoltar = document.getElementById('btnVoltar');
+  const msgEl = document.getElementById('msg');
 
-let grid=[], snake=[], dir=null, nextDir=null, food=null;
-let score=0, lives=3, speed=120, running=false, paused=false, loop=null;
+  const btnUp = document.getElementById('btnUp');
+  const btnDown = document.getElementById('btnDown');
+  const btnLeft = document.getElementById('btnLeft');
+  const btnRight = document.getElementById('btnRight');
 
-// Labirinto fácil fixo editável
-const fixedMaze=Array.from({length:rows},()=>Array(cols).fill(false));
-for(let y=0;y<rows;y++){ fixedMaze[y][0]=true; fixedMaze[y][cols-1]=true; }
-for(let x=0;x<cols;x++){ fixedMaze[0][x]=true; fixedMaze[rows-1][x]=true; }
-for(let x=2;x<cols-2;x+=4){ fixedMaze[5][x]=true; fixedMaze[10][x]=true; fixedMaze[15][x]=true; }
+  /* --- game vars --- */
+  const cols = 25, rows = 25;
+  const tile = Math.floor(canvas.width / cols);
+  let grid = [], snake = [], dir = null, nextDir = null, food = null;
+  let score = 0, lives = 3, speed = 120, running = false, paused = false, loop = null;
 
-function inBounds(x,y){ return x>=0&&x<cols&&y>=0&&y<rows; }
-function setLives(n){ 
-  lives=n; vidasEl.innerHTML='';
-  for(let i=0;i<lives;i++){ const s=document.createElement('span'); s.className='vida'; s.textContent='❤️'; vidasEl.appendChild(s);}
-}
-function info(msg){ msgEl.textContent=msg||''; }
-function findNearestFreeFromCenter(g){ 
-  const cx=Math.floor(cols/2), cy=Math.floor(rows/2); 
-  if(!g[cy][cx]) return {x:cx,y:cy};
-  const vis=Array.from({length:rows},()=>Array(cols).fill(false)); 
-  const q=[{x:cx,y:cy}]; vis[cy][cx]=true; let qi=0; 
-  const steps=[[1,0],[-1,0],[0,1],[0,-1]];
-  while(qi<q.length){ 
-    const n=q[qi++]; 
-    for(const [dx,dy] of steps){ 
-      const nx=n.x+dx, ny=n.y+dy; 
-      if(inBounds(nx,ny)&&!vis[ny][nx]){ 
-        if(!g[ny][nx]) return {x:nx,y:ny}; 
-        vis[ny][nx]=true; q.push({x:nx,y:ny}); 
-      } 
-    } 
-  } 
-  return {x:1,y:1}; 
-}
-function placeFood(){
-  for(let tries=0;tries<4000;tries++){
-    const x=Math.floor(Math.random()*cols), y=Math.floor(Math.random()*rows);
-    if(grid[y][x]) continue; if(snake.some(s=>s.x===x&&s.y===y)) continue;
-    food={x,y}; return;
+  /* --- helpers --- */
+  function inBounds(x,y){ return x>=0 && x<cols && y>=0 && y<rows; }
+  function setLives(n){
+    lives = n; vidasEl.innerHTML = '';
+    for(let i=0;i<lives;i++){ const s=document.createElement('span'); s.className='vida'; s.textContent='❤️'; vidasEl.appendChild(s); }
   }
-  outer:for(let y=0;y<rows;y++){for(let x=0;x<cols;x++){if(!grid[y][x]&&!snake.some(s=>s.x===x&&s.y===y)){ food={x,y}; break outer; }}}
-}
-
-function buildGridForPhase(phase){ if(phase==='livre') return Array.from({length:rows},()=>Array(cols).fill(false)); if(phase==='facil') return fixedMaze.map(r=>[...r]); }
-
-function startGame(){
-  score=0; pontosEl.textContent=score; setLives(3); paused=false; info('');
-  speed=(diffSel.value==='lento')?200:(diffSel.value==='medio')?120:80;
-  grid=buildGridForPhase(faseSel.value);
-  const start=findNearestFreeFromCenter(grid);
-  snake=[{x:start.x,y:start.y}]; dir=null; nextDir=null;
-  placeFood();
-  if(loop) clearInterval(loop);
-  loop=setInterval(tick,speed); running=true; btnPause.textContent='Pausar';
-  canvas.focus();
-}
-function pauseGame(){ if(!running) return; paused=!paused; btnPause.textContent=paused?'Retomar':'Pausar'; }
-function stopGameToMenu(msg){ running=false; paused=false; if(loop){ clearInterval(loop); loop=null;} info(msg||''); }
-function loseLifeAndReset(){ setLives(Math.max(0,lives-1)); if(lives<=0){ stopGameToMenu(`Game Over! Pontos: ${score}`); return; } const start=findNearestFreeFromCenter(grid); snake=[{x:start.x,y:start.y}]; dir=null; nextDir=null; placeFood(); }
-
-function tick(){
-  if(!running||paused) return;
-  if(nextDir && !((dir==='left'&&nextDir==='right')||(dir==='right'&&nextDir==='left')||(dir==='up'&&nextDir==='down')||(dir==='down'&&nextDir==='up'))){ dir=nextDir; }
-  nextDir=null;
-  if(!dir){ draw(); return; }
-  const head={...snake[0]};
-  if(dir==='left') head.x--; if(dir==='right') head.x++; if(dir==='up') head.y--; if(dir==='down') head.y++;
-  const out=!inBounds(head.x,head.y); const hitWall=!out&&grid[head.y][head.x]; const hitSelf=snake.some((s,i)=>i>0&&s.x===head.x&&s.y===head.y);
-  if(out||hitWall||hitSelf){ loseLifeAndReset(); draw(); return; }
-  snake.unshift(head);
-  if(food && head.x===food.x && head.y===food.y){ score++; pontosEl.textContent=score; placeFood(); } else { snake.pop(); }
-  draw();
-}
-
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  // fundo animado
-  const t=Date.now()*0.002;
-  const grad=ctx.createLinearGradient(0,0,canvas.width,canvas.height);
-  grad.addColorStop(0,`hsl(${(t*50)%360},50%,10%)`);
-  grad.addColorStop(1,`hsl(${(t*50+180)%360},50%,20%)`);
-  ctx.fillStyle=grad; ctx.fillRect(0,0,canvas.width,canvas.height);
-
-  // grid
-  for(let y=0;y<rows;y++){
-    for(let x=0;x<cols;x++){
-      const px=x*tile, py=y*tile;
-      if(grid[y][x]){
-        ctx.fillStyle=getVar('--wall'); ctx.fillRect(px,py,tile,tile);
-        ctx.strokeStyle=getVar('--wall-border'); ctx.strokeRect(px,py,tile,tile);
-      } else {
-        ctx.fillStyle=((x+y)%2===0)?getVar('--floorA'):getVar('--floorB');
-        ctx.fillRect(px,py,tile,tile);
+  function info(m){ msgEl.textContent = m || ''; }
+  function findNearestFreeFromCenter(g){
+    const cx = Math.floor(cols/2), cy = Math.floor(rows/2);
+    if(!g[cy][cx]) return {x:cx,y:cy};
+    const vis = Array.from({length:rows},()=>Array(cols).fill(false));
+    const q = [{x:cx,y:cy}]; vis[cy][cx]=true;
+    let qi=0; const steps = [[1,0],[-1,0],[0,1],[0,-1]];
+    while(qi<q.length){
+      const n=q[qi++]; for(const [dx,dy] of steps){
+        const nx=n.x+dx, ny=n.y+dy;
+        if(inBounds(nx,ny) && !vis[ny][nx]){
+          if(!g[ny][nx]) return {x:nx,y:ny};
+          vis[ny][nx]=true; q.push({x:nx,y:ny});
+        }
+      }
+    }
+    return {x:1,y:1};
+  }
+  function placeFood(){
+    for(let tries=0;tries<4000;tries++){
+      const x=Math.floor(Math.random()*cols), y=Math.floor(Math.random()*rows);
+      if(grid[y][x]) continue;
+      if(snake.some(s=>s.x===x&&s.y===y)) continue;
+      food = {x,y}; return;
+    }
+    // fallback
+    outer: for(let y=0;y<rows;y++){
+      for(let x=0;x<cols;x++){
+        if(!grid[y][x] && !snake.some(s=>s.x===x&&s.y===y)){ food={x,y}; break outer; }
       }
     }
   }
-  // comida pulsante
-  if(food){
-    const cx=food.x*tile+tile/2, cy=food.y*tile+tile/2;
-    const pulse=1+0.1*Math.sin(Date.now()*0.01);
-    ctx.beginPath(); ctx.fillStyle=getVar('--food'); ctx.shadowColor=getVar('--food'); ctx.shadowBlur=12; ctx.arc(cx,cy,tile*0.36*pulse,0,Math.PI*2); ctx.fill();
+
+  /* --- maze builder (basic) --- */
+  function buildGridForPhase(phase){
+    const g = Array.from({length:rows},()=>Array(cols).fill(false));
+    if(phase === 'livre') return g;
+    // borda 1 tile
+    for(let x=0;x<cols;x++){ g[0][x] = true; g[rows-1][x] = true; }
+    for(let y=0;y<rows;y++){ g[y][0] = true; g[y][cols-1] = true; }
+    if(phase === 'facil'){
+      for(let x=2;x<cols-2;x+=4){ g[6][x]=true; g[12][x]=true; g[18][x]=true; }
+      // pequenas aberturas (garante acesso)
+      for(let x=3;x<cols-3;x+=8){ g[6][x]=false; g[12][x]=false; g[18][x]=false; }
+    }
+    if(phase === 'dificil'){
+      // generate small pattern (you can replace with real maze)
+      for(let y=2;y<rows-2;y+=3){
+        for(let x=2;x<cols-2;x+=3) g[y][x]=true;
+      }
+    }
+    return g;
   }
 
-  // cobra
-  for(let i=snake.length-1;i>=0;i--){
-    const s=snake[i], px=s.x*tile, py=s.y*tile;
-    if(i===0){
-      const g=ctx.createLinearGradient(px,py,px+tile,py+tile);
-      g.addColorStop(0,getVar('--headA')); g.addColorStop(1,getVar('--headB'));
-      ctx.fillStyle=g; ctx.shadowColor=getVar('--headB'); ctx.shadowBlur=14; ctx.fillRect(px,py,tile,tile);
-      ctx.shadowBlur=0;
-      ctx.fillStyle='#fff'; ctx.fillRect(px + tile*0.62, py + tile*0.28, Math.max(1,Math.round(tile*0.08)), Math.max(1,Math.round(tile*0.08)));
-    } else {
-      ctx.fillStyle=(i%2===0)?getVar('--bodyA'):getVar('--bodyB');
-      ctx.shadowColor=(i%2===0)?getVar('--bodyA'):getVar('--bodyB'); ctx.shadowBlur=8;
-      ctx.fillRect(px,py,tile,tile);
-      ctx.shadowBlur=0;
+  /* --- game control --- */
+  function startGame(){
+    score=0; pontosEl.textContent=score;
+    setLives(3); paused=false; info('');
+    speed = diffSel.value==='lento'?200: diffSel.value==='rapido'?80:120;
+    grid = buildGridForPhase(faseSel.value);
+    const start = findNearestFreeFromCenter(grid);
+    snake = [{x:start.x, y:start.y}];
+    dir = nextDir = null; placeFood();
+    if(loop) clearInterval(loop);
+    loop = setInterval(tick, speed);
+    running = true; btnPause.textContent='Pausar';
+    canvas.focus();
+  }
+  function pauseGame(){ if(!running) return; paused = !paused; btnPause.textContent = paused? 'Retomar' : 'Pausar'; }
+  function stopGameToMenu(msg){ running=false; paused=false; if(loop){ clearInterval(loop); loop=null } info(msg||''); }
+  function loseLifeAndReset(){
+    setLives(Math.max(0, lives-1));
+    if(lives<=0){ stopGameToMenu(`Game Over! Pontos: ${score}`); return; }
+    const start = findNearestFreeFromCenter(grid);
+    snake = [{x:start.x, y:start.y}];
+    dir = nextDir = null;
+    placeFood();
+  }
+
+  function tick(){
+    if(!running || paused) return;
+    if(nextDir && !((dir==='left'&&nextDir==='right')||(dir==='right'&&nextDir==='left')||(dir==='up'&&nextDir==='down')||(dir==='down'&&nextDir==='up'))){
+      dir = nextDir;
+    }
+    nextDir = null;
+    if(!dir){ draw(); return; }
+    const head = {...snake[0]};
+    if(dir==='left') head.x--;
+    if(dir==='right') head.x++;
+    if(dir==='up') head.y--;
+    if(dir==='down') head.y++;
+    const out = !inBounds(head.x, head.y);
+    const hitWall = !out && grid[head.y][head.x];
+    const hitSelf = snake.some((s,i)=>i>0 && s.x===head.x && s.y===head.y);
+    if(out || hitWall || hitSelf){ loseLifeAndReset(); draw(); return; }
+    snake.unshift(head);
+    if(food && head.x===food.x && head.y===food.y){
+      score++; pontosEl.textContent=score;
+      placeFood();
+    } else { snake.pop(); }
+    draw();
+  }
+
+  /* --- draw --- */
+  function draw(){
+    ctx.fillStyle = '#05060f'; ctx.fillRect(0,0,canvas.width,canvas.height);
+    for(let y=0;y<rows;y++){
+      for(let x=0;x<cols;x++){
+        const px = x*tile, py=y*tile;
+        if(grid[y][x]){
+          ctx.fillStyle = getVar('--wall') || '#0f1531';
+          ctx.fillRect(px,py,tile,tile);
+          ctx.strokeStyle = 'rgba(0,207,255,0.06)'; ctx.strokeRect(px,py,tile,tile);
+        } else {
+          ctx.fillStyle = ((x+y)%2===0)? getVar('--floorA'): getVar('--floorB');
+          ctx.fillRect(px,py,tile,tile);
+        }
+      }
+    }
+    if(food){
+      const cx = food.x*tile + tile/2, cy = food.y*tile + tile/2;
+      ctx.beginPath(); ctx.fillStyle = getVar('--food') || '#ff6b6b'; ctx.arc(cx,cy,tile*0.36,0,Math.PI*2); ctx.fill();
+    }
+    for(let i=snake.length-1;i>=0;i--){
+      const s=snake[i]; const px=s.x*tile, py=s.y*tile;
+      if(i===0){
+        const g = ctx.createLinearGradient(px,py,px+tile,py+tile); g.addColorStop(0,getVar('--accent')); g.addColorStop(1,getVar('--accent'));
+        ctx.fillStyle = g; ctx.fillRect(px+1,py+1,tile-2,tile-2);
+        ctx.fillStyle='#fff'; ctx.fillRect(px + tile*0.62, py + tile*0.28, Math.max(1, Math.round(tile*0.08)), Math.max(1, Math.round(tile*0.08)));
+      } else {
+        ctx.fillStyle = (i%2===0)? getVar('--accent'): getVar('--accent');
+        ctx.fillRect(px+1,py+1,tile-2,tile-2);
+      }
     }
   }
-}
 
-function getVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function getVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
 
-document.addEventListener('keydown',(e)=>{
-  const k=e.key;
-  if(['ArrowUp','w','W'].includes(k)) nextDir='up';
-  else if(['ArrowDown','s','S'].includes(k)) nextDir='down';
-  else if(['ArrowLeft','a','A'].includes(k)) nextDir='left';
-  else if(['ArrowRight','d','D'].includes(k)) nextDir='right';
-  else if(k===' '||k==='Spacebar'){ e.preventDefault(); pauseGame(); }
-});
-canvas.addEventListener('click',()=>canvas.focus());
-btnStart.addEventListener('click',startGame);
-btnPause.addEventListener('click',pauseGame);
-btnReiniciar.addEventListener('click',()=>{if(running){ stopGameToMenu();} startGame();});
-btnVoltar.addEventListener('click',()=>{ stopGameToMenu(''); });
+  /* --- keyboard controls --- */
+  document.addEventListener('keydown', (e) => {
+    const k = e.key;
+    if(['ArrowUp','w','W'].includes(k)) nextDir='up';
+    else if(['ArrowDown','s','S'].includes(k)) nextDir='down';
+    else if(['ArrowLeft','a','A'].includes(k)) nextDir='left';
+    else if(['ArrowRight','d','D'].includes(k)) nextDir='right';
+    else if(k===' '||k==='Spacebar'){ e.preventDefault(); pauseGame(); }
+  });
 
-draw();
-setLives(3);
+  /* --- D-pad binding (pointer events + fallbacks) --- */
+  function bindDpadButton(btnElem, direction){
+    if(!btnElem) return;
+
+    // pointer events (recommended)
+    btnElem.addEventListener('pointerdown', (ev) => {
+      ev.preventDefault();
+      try{ btnElem.setPointerCapture(ev.pointerId); } catch(e){}
+      btnElem.classList.add('pressed');
+      nextDir = direction;
+    }, { passive: false });
+
+    btnElem.addEventListener('pointerup', (ev) => {
+      btnElem.classList.remove('pressed');
+      try{ btnElem.releasePointerCapture(ev.pointerId); } catch(e){}
+    });
+
+    btnElem.addEventListener('pointercancel', ()=> btnElem.classList.remove('pressed'));
+
+    // fallback: touchstart for older browsers
+    btnElem.addEventListener('touchstart', (ev) => {
+      ev.preventDefault();
+      btnElem.classList.add('pressed');
+      nextDir = direction;
+    }, { passive: false });
+
+    btnElem.addEventListener('touchend', (ev) => {
+      btnElem.classList.remove('pressed');
+    });
+
+    // click fallback (mouse)
+    btnElem.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      nextDir = direction;
+    });
+  }
+
+  bindDpadButton(btnUp, 'up');
+  bindDpadButton(btnDown, 'down');
+  bindDpadButton(btnLeft, 'left');
+  bindDpadButton(btnRight, 'right');
+
+  /* --- swipe on canvas (pointer + touch fallback) --- */
+  let swipeStart = null;
+  const SWIPE_MIN = 18; // px threshold
+
+  // pointer-based swipe
+  canvas.addEventListener('pointerdown', (ev) => {
+    // only track touch/pointer for swipes; still fine with mouse
+    swipeStart = {x: ev.clientX, y: ev.clientY, id: ev.pointerId};
+    try{ canvas.setPointerCapture(ev.pointerId); } catch(e){}
+  }, { passive:false });
+
+  canvas.addEventListener('pointerup', (ev) => {
+    if(!swipeStart) return;
+    const dx = ev.clientX - swipeStart.x, dy = ev.clientY - swipeStart.y;
+    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_MIN){
+      nextDir = dx > 0 ? 'right' : 'left';
+    } else if(Math.abs(dy) > SWIPE_MIN){
+      nextDir = dy > 0 ? 'down' : 'up';
+    }
+    try{ canvas.releasePointerCapture(ev.pointerId); } catch(e){}
+    swipeStart = null;
+  });
+
+  canvas.addEventListener('pointercancel', ()=> swipeStart = null);
+
+  // touch fallback (older browsers)
+  let touchStartX=0, touchStartY=0;
+  canvas.addEventListener('touchstart', (e) => {
+    if(e.touches && e.touches[0]){ touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; }
+  }, { passive:false });
+
+  canvas.addEventListener('touchend', (e) => {
+    if(!e.changedTouches || !e.changedTouches[0]) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_MIN){
+      nextDir = dx > 0 ? 'right' : 'left';
+    } else if(Math.abs(dy) > SWIPE_MIN){
+      nextDir = dy > 0 ? 'down' : 'up';
+    }
+  }, { passive:false });
+
+  /* --- buttons UI (start/pause/etc) --- */
+  btnStart.addEventListener('click', startGame);
+  btnPause.addEventListener('click', pauseGame);
+  btnReiniciar.addEventListener('click', () => { if(running) stopGameToMenu(); startGame(); });
+  btnVoltar.addEventListener('click', ()=> stopGameToMenu('') );
+
+  /* --- initial draw --- */
+  draw();
+  setLives(3);
+
+  // expose some things for debugging (optional)
+  window._game = { startGame, pauseGame, stopGameToMenu, draw };
 
 })();
 </script>
