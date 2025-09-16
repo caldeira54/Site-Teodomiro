@@ -119,7 +119,7 @@ header {
   z-index: 1000;
 }
 /* RESPONSIVIDADE PARA CELULAR */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   header {
     padding: 80px 15px;
   }
@@ -136,27 +136,27 @@ header {
 
   .courses {
     flex-direction: column;   /* Deixa os cards em coluna */
-    align-items: center;
+    /* align-items: center;
     gap: 30px;
   }
 
   .course-card {
     width: 90%;               /* Ocupa quase toda a largura */
-    max-width: 350px;
+    /* max-width: 350px;
   }
-}
+} */
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width:361px) and (max-width: 540px) {
   header {
     padding: 60px 10px;
   }
 
   #typing-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .course-card {
