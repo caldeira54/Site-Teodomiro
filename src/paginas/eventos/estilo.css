@@ -272,3 +272,19 @@ h1 {
         justify-content: center;
     }
 }
+
+@media screen and (max-width:360px) {
+    .projetoliterario{
+        p{
+            width: 100%;
+        }
+
+        div{
+            flex-direction: column;
+
+            img{
+                width: 90%;
+            }
+        }
+    }
+}
