@@ -3,7 +3,9 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+body{
+    background: linear-gradient(to right, rgb(52, 127, 214), rgb(177, 202, 223));
+}
 .contaner {
     display: flex;
     justify-content: baseline;
@@ -17,7 +19,7 @@
 .h1 {
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(14, 99, 255);
+    color: rgb(0, 59, 168);
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -113,7 +115,15 @@
 .fanfarra img {
     width: 400px;
 }
+.imagem3 {
+    display: flex;
+    width: 45%;
+    justify-content: space-around;
+}
 
+.imagem3 img {
+    width: 78%;
+}
 @media screen and (min-width: 1100px) and (max-width: 1520px) {
     .text1 {
         .imagem1 {
