@@ -1,22 +1,22 @@
 // Lista de alunos
 const alunos = [
-  { nome: "João Pedro ", idade: 17, pagina: "Cursos, proposta pedagógicas.", foto: "../../imagens/joaop11.jpg" },
+  { nome: "João Pedro", idade: 17, pagina: "Cursos, proposta pedagógicas.", foto: "../../imagens/joaop11.jpg" },
   { nome: "Ariana", idade: 18, pagina: "Cursos, proposta pedagógicas.", foto: "../../imagens/ari1.jpg" },
-  { nome: "Jamille ", idade: 18, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/jamill2.jpg" },
+  { nome: "Jamille", idade: 18, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/jamill2.jpg" },
   { nome: "Rhaisa", idade: 18, pagina: "Institucional", foto: "../../imagens/rhaisa.jpg" },
   { nome: "Rafael", idade: 18, pagina: "Depoimentos", foto: "../../imagens/rafa000.jpg" },
   { nome: "Larissa", idade: 17, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/larissa.jpg" },
-  { nome: "Rosielene ", idade: 17, pagina: "Responsável pelas fotos", foto: "../../imagens/rose.jpg" },
-  { nome: "Nicolas ", idade: 18, pagina: "Home", foto: "../../imagens/nicolas1.0.jpg" }
+  { nome: "Rosielene", idade: 17, pagina: "Responsável pelas fotos", foto: "../../imagens/rose.jpg" },
+  { nome: "Nicolas", idade: 18, pagina: "Home", foto: "../../imagens/nicolas1.0.jpg" }
 ];
 
 // Container
 const container = document.getElementById("equipe-container");
 
 // Donos da página
-const donosPagina = ["João Pedro ", "Ariana"];
+const donosPagina = ["João Pedro", "Ariana"];
 
-// Gerar cards
+// Gerar cards dinamicamente
 alunos.forEach((aluno, index) => {
   const card = document.createElement("div");
   card.classList.add("card");
