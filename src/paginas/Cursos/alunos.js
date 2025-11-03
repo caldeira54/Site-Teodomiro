@@ -1,7 +1,7 @@
 // Lista de alunos
 const alunos = [
-  { nome: "João Pedro ", idade: 17, pagina: "Cursos,proposta pedagógicas.", foto: "../../imagens/joaop11.JPG" },
-  { nome: "Jamille ", idade: 18, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/jamill2.JPG" },
+  { nome: "João Pedro ", idade: 17, pagina: "Cursos,proposta pedagógicas.", foto: "../../imagens/joaop00.jpg" },
+  { nome: "Jamille ", idade: 18, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/jamill2.jpg" },
   { nome: "Ariana", idade: 18, pagina: "Cursos,proposta pedagogicas.", foto: "../../imagens/ari1.jpg" },
   { nome: "Rhaisa", idade: 18, pagina: "Institucional", foto: "../../imagens/rhaisa.jpg" },
   { nome: "Larissa", idade: 17, pagina: "Eventos, seguimentos da educação.", foto: "../../imagens/larissa.jpg" },
