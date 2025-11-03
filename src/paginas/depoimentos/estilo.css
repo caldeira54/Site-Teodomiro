@@ -77,9 +77,10 @@ body {
     transition: 0.3s ease-in-out;
     border: none;
 }
-.botao-abrir:hover{
+
+.botao-abrir:hover {
     transform: scale(1.05);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .formulario {
@@ -132,13 +133,13 @@ footer {
     gap: 15px;
     border-radius: 20px;
     border: 1px solid #fff;
-    width: 20%;
+    width: 30%;
 }
 
 #form-depoimento input,
 #form-depoimento textarea {
     width: 80%;
-    max-width: 200px;
+    max-width: 400px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -202,5 +203,90 @@ footer {
     #form-depoimento {
         width: 100%;
         padding: 10px;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 540px) {
+    .formulario {
+        width: 100%;
+    }
+
+    #form-depoimento {
+        width: 100%;
+    }
+    #form-depoimento input{
+        width: 90%;
+        max-width: none;
+    }
+     #form-depoimento textarea{
+        width: 90%;
+        max-width: none;
+    }
+     #form-depoimento button{
+        width: 90%;
+        max-width: none;
+    }
+}
+@media (min-width: 541px) and (max-width: 720px) {
+    .formulario {
+        width: 100%;
+    }
+
+    #form-depoimento {
+        width: 100%;
+    }
+    #form-depoimento input{
+        width: 80%;
+        max-width: none;
+    }
+     #form-depoimento textarea{
+        width: 80%;
+        max-width: none;
+    }
+     #form-depoimento button{
+        width: 80%;
+        max-width: none;
+    }
+}
+@media (min-width: 721px) and (max-width: 900px) {
+    .formulario {
+        width: 100%;
+    }
+
+    #form-depoimento {
+        width: 70%;
+    }
+    #form-depoimento input{
+        width: 70%;
+        max-width: none;
+    }
+     #form-depoimento textarea{
+        width: 70%;
+        max-width: none;
+    }
+     #form-depoimento button{
+        width: 70%;
+        max-width: none;
+    }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+    .formulario {
+        width: 100%;
+    }
+
+    #form-depoimento {
+        width: 50%;
+    }
+    #form-depoimento input{
+        width: 70%;
+        max-width: none;
+    }
+     #form-depoimento textarea{
+        width: 70%;
+        max-width: none;
+    }
+     #form-depoimento button{
+        width: 70%;
+        max-width: none;
     }
 }
