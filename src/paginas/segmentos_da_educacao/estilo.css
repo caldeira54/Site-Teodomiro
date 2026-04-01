@@ -128,7 +128,7 @@ h1 {
     }
 }
 
-@media screen and (max-width: 340px) {
+@media (min-width: 340px) and (max-width: 760px) {
     .fundamental_1 {
         flex-direction: column;
         width: 100%;
@@ -228,6 +228,110 @@ h1 {
 
         p {
             width: 95%;
+        }
+    }
+}
+
+@media (min-width: 761px) and (max-width: 1200px){
+    .fundamental_1 {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+
+        p {
+            width: 65%;
+        }
+
+        img {
+            width: 65%;
+            border-radius: 10px;
+        }
+    }
+
+    .fundamental_2 {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+
+        p {
+            width: 65%;
+        }
+
+        img {
+            width: 65%;
+            border-radius: 10px;
+        }
+    }
+
+    .fundamental_2_tempo_integral {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+
+        p {
+            width: 65%;
+        }
+
+        img {
+            width: 65%;
+            border-radius: 10px;
+        }
+    }
+
+    .ensino_medio_regular {
+       flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+
+        p {
+            width: 65%;
+        }
+
+        img {
+            width: 65%;
+            border-radius: 10px;
+        }
+    }
+
+    .ensino_medio_tempo_integral {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+
+        p {
+            width: 65%;
+        }
+
+        img {
+            width: 65%;
+            border-radius: 10px;
+        }
+    }
+
+    .carga_horaria {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+
+        p {
+            width: 65%;
+        }
+    }
+
+    .matricula {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+
+        p {
+            width: 65%;
         }
     }
 }

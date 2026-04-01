@@ -14,7 +14,7 @@ h1 {
 }
 
 .projetoliterario {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@ h1 {
 }
 
 .jogosdeinterclasse {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -62,7 +62,7 @@ h1 {
 }
 
 .quadrilha {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -86,7 +86,7 @@ h1 {
 }
 
 .sonhoseprojetodevida {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -110,7 +110,7 @@ h1 {
 }
 
 .setedesetembro {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -134,7 +134,7 @@ h1 {
 }
 
 .bailedeprimavera {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -148,7 +148,7 @@ h1 {
 }
 
 .semanadascriancas {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -172,7 +172,7 @@ h1 {
 }
 
 .showdetalentos {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -186,7 +186,7 @@ h1 {
 }
 
 .semanadeeducacaoparaavida {
-    width: 90%;
+    width: 100%;
     display: flex;
     /* justify-content: space-evenly; */
     align-items: center;
@@ -212,7 +212,7 @@ h1 {
 }
 
 .feiradeciencias {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -236,7 +236,7 @@ h1 {
 }
 
 .auladasaudade {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -250,7 +250,7 @@ h1 {
 }
 
 .cerimoniadeformatura {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -273,10 +273,10 @@ h1 {
     }
 }
 
-@media screen and (max-width:360px) {
+@media (min-width:360px) and (max-width:1200px) {
     .projetoliterario {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         div {
@@ -290,7 +290,7 @@ h1 {
 
     .jogosdeinterclasse {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         div {
@@ -306,11 +306,12 @@ h1 {
 
     .quadrilha {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         div {
             flex-direction: column;
+            align-items: center;
 
             img {
                 width: 80%;
@@ -321,7 +322,7 @@ h1 {
 
     .sonhoseprojetodevida {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         img {
@@ -332,11 +333,12 @@ h1 {
 
     .setedesetembro {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         div {
             flex-direction: column;
+            align-items: center;
 
             img {
                 width: 80%;
@@ -346,17 +348,18 @@ h1 {
 
     .bailedeprimavera {
         p {
-            width: 100%;
+            width: 90%;
         }
     }
 
     .semanadascriancas {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         div {
             flex-direction: column;
+            align-items: center;
 
             img {
                 width: 80%;
@@ -366,13 +369,13 @@ h1 {
 
     .showdetalentos {
         p {
-            width: 100%;
+            width: 90%;
         }
     }
 
     .semanadeeducacaoparaavida {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         .grid {
@@ -389,14 +392,15 @@ h1 {
 
     .feiradeciencias {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         div {
             flex-direction: column;
+            align-items: center;
 
             img {
-                width: 80%;
+                width: 60%;
             }
         }
     }
@@ -404,7 +408,7 @@ h1 {
     .auladasaudade {
         gap:24px;
         p {
-            width: 100%;
+            width: 90%;
         }
 
         img {
@@ -414,11 +418,12 @@ h1 {
 
     .cerimoniadeformatura {
         p {
-            width: 100%;
+            width: 90%;
         }
 
         div {
             flex-direction: column;
+            align-items: center;
 
             img {
                 width: 80%;
